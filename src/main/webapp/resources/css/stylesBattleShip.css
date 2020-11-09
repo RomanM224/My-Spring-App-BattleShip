@@ -23,8 +23,8 @@ input[type=checkbox] {
 	position: absolute;
 	top: 0;
 	left: 0;
-	height: 35px;
-	width: 35px;
+	height: 30px;
+	width: 30px;
 	background-color: #3983fa;
 }
 
@@ -42,8 +42,8 @@ input[type=checkbox] {
 	position: absolute;
 	top: 0;
 	left: 0;
-	height: 35px;
-	width: 35px;
+	height: 30px;
+	width: 30px;
 	background-color: #6b645b;
 }
 
@@ -51,8 +51,8 @@ input[type=checkbox] {
 	position: absolute;
 	top: 0;
 	left: 0;
-	height: 35px;
-	width: 35px;
+	height: 30px;
+	width: 30px;
 	background-color: #3983fa;
 }
 
@@ -70,8 +70,8 @@ input[type=checkbox] {
 	position: absolute;
 	top: 0;
 	left: 0;
-	height: 35px;
-	width: 35px;
+	height: 30px;
+	width: 30px;
 	background-color: red;
 }
 
@@ -80,8 +80,8 @@ input[type=checkbox] {
 	position: absolute;
 	top: 0;
 	left: 0;
-	height: 35px;
-	width: 35px;
+	height: 30px;
+	width: 30px;
 	background-color: #3983fa;
 }
 
@@ -99,20 +99,21 @@ input[type=checkbox] {
 	position: absolute;
 	top: 0;
 	left: 0;
-	height: 35px;
-	width: 35px;
+	height: 30px;
+	width: 30px;
 	background-color: #e88e17;
 }
 
 td{
-	height: 40px;
-	width: 40px;
+	height: 35px;
+	width: 35px;
 }
 
 .shotBtn{
 	margin-top:250px;
-	margin-left:50px;
+	margin-left:0px;
 	height: 80px;
 	width: 170px;
 }
+
 

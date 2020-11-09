@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@page import="com.maistruk.springapp.service.battleShip.TableCreater"%>
-<%@page import="com.maistruk.springapp.service.battleShip.FieldChecker"%>
+<%@ page isELIgnored="false"%>
+<%@page import="com.maistruks.portfolio.service.battleShip.TableCreater"%>
+<%@page import="com.maistruks.portfolio.service.battleShip.FieldChecker"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +25,7 @@
 </head>
 <body class="bg-color">
 
-  	<jsp:include page="../components/navigationBar.jsp"></jsp:include>   
+  	<jsp:include page="../components/navigationBarBattleShip.jsp"></jsp:include>   
 	
 	<spring:url value="/resources/img/ships_example.jpg" var="ships_example" />
 

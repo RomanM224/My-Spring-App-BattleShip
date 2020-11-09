@@ -7,3 +7,46 @@
 .navBar{
 	font-size:20px;
 }
+
+.mainBtn{
+	margin-top: 30px;
+	height: 160px;
+	width: 250px;
+}
+
+.mainBtn:hover{
+	margin-top: 30px;
+	height: 160px;
+	width: 250px;
+	opacity: 0.5;
+}
+
+.btn_gallery_text{
+	font-size: 40px;
+	color: #000040;
+	font-weight: bold;
+}
+
+.btn_battleship_text{
+	font-size: 40px;
+	color: #00ff80;
+	font-weight: bold;
+}
+
+.bg-image-galery{
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-attachment: fixed;	
+}
+
+.card{
+	box-shadow: 5px 5px 15px #3c3c3c;
+}
+
+.card-bg-color{
+	background: #d8d8d8;
+} 
+
+div.myCard {
+	background: rgba(194, 194, 194, 0.2);
+}

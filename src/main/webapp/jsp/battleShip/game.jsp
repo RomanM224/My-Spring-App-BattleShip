@@ -1,14 +1,14 @@
-<%@page import="com.maistruk.springapp.service.battleShip.TableCreater"%>
-<%@page import="com.maistruk.springapp.service.battleShip.FieldChecker"%>
+<%@page import="com.maistruks.portfolio.service.battleShip.TableCreater"%>
+<%@page import="com.maistruks.portfolio.service.battleShip.FieldChecker"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <%@ page import="java.util.List"%>
 <%@ page import="java.util.ArrayList"%>
-<%@ page import="com.maistruk.springapp.model.battleShip.Fleet"%>
-<%@ page import="com.maistruk.springapp.model.battleShip.Field"%>
-<%@ page import="com.maistruk.springapp.service.battleShip.ComputerAI"%>
-
+<%@ page import="com.maistruks.portfolio.model.battleShip.Fleet"%>
+<%@ page import="com.maistruks.portfolio.model.battleShip.Field"%>
+<%@ page import="com.maistruks.portfolio.service.battleShip.ComputerAI"%>
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +29,7 @@
 </head>
 <body class="bg-color">
 
-	  	<jsp:include page="../components/navigationBar.jsp"></jsp:include>   
+	  	<jsp:include page="../components/navigationBarBattleShip.jsp"></jsp:include>   
 
 	<%
 	    Fleet myFleet = (Fleet) session.getAttribute("myFleet");
@@ -43,7 +43,7 @@
 	%>
 	<div class ="container-fluid mt-2 ml-5">
 	<div class ="row">
-	 <div class="col-4 border border-warning">
+	 <div class="col-lg-5 col-xl-4 border border-warning">
 	 <h3>My Ships</h3>
 	 <%for(int i = 1; i <=5; i++){
 	     int shipSize = myFleet.getShipFieldsBySize(i);
@@ -55,8 +55,7 @@
 	}
 	%>
 	</div>
-	<div class="col-1"> </div>
-	<div class="col-4 border border-info">
+	<div class="col-lg-5 col-xl-4 border border-info">
 	 <h3>Enemy Ships</h3>
 	 <%for(int i = 1; i <=5; i++){
 	     int shipSize = enemyFleet.getShipFieldsBySize(i);
@@ -68,14 +67,19 @@
 	}
 	%>
 
-	
 	</div>
+	<div class="col-lg-2 col-xl-2">
+		<label class="blueMark">sss<input type="checkbox" class="unclicable">See<span class="greyMark"></span></label><br>
+ 		<label class="blueMark">sss<input type="checkbox" class="unclicable" checked>Miss<span class="greyMark"></span> </label><br>
+		<label class="blueMark">sss<input type="checkbox" class="unclicable" checked>Hit<span class="redMark"></span> </label><br>
+		<label class="blueMark">sss<input type="checkbox" class="unclicable" checked>My ships<span class="oragneMark"></span> </label>
+		</div>
 	</div>
 	</div>
 		<div class="container-fluid mt-1 ml-5">
 		<form action="../battleShip/game" method="POST">
 		<div class ="row">
-		<div class="col-4 tbl">
+		<div class="col-sm-12 col-lg-5 col-xl-4 tbl">
 		<b>My Ships</b>
 			<table>
 				<%
@@ -95,8 +99,7 @@
 				%>
 			</table>
 		</div>
-		<div class="col-1"></div>
-		<div class="col-4 tbl">
+		<div class="col-sm-12 col-lg-5 col-xl-4 tbl">
 		<b>Enemy Ships</b>
 			<table >
 				<%
@@ -137,11 +140,7 @@
 				%>
 			</table>
 		</div>  --%>
-		<div class="col-2">
-		<label class="blueMark">sss<input type="checkbox" class="unclicable">See<span class="greyMark"></span></label><br>
- 		<label class="blueMark">sss<input type="checkbox" class="unclicable" checked>Miss<span class="greyMark"></span> </label><br>
-		<label class="blueMark">sss<input type="checkbox" class="unclicable" checked>Hit<span class="redMark"></span> </label><br>
-		<label class="blueMark">sss<input type="checkbox" class="unclicable" checked>My ships<span class="oragneMark"></span> </label>
+		<div class="col-sm-12 col-lg-2 col-xl-2">
 		<input type="submit" class="btn btn-warning btn-lg shotBtn font-weight-bold" value="Shot">
 		</div>
 		</div>

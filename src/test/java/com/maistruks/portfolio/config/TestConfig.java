@@ -1,4 +1,4 @@
-package com.maistruks.portfolio.confit;
+package com.maistruks.portfolio.config;
 
 import javax.sql.DataSource;
 

@@ -30,6 +30,14 @@ public class PaintingDaoImpl implements PaintingDao {
     private static final String GET_PAINTINGS_BY_STYLE = "SELECT * FROM paintings WHERE style = ?";
     private static final String DELETE_PAINTING_RELATED_TO_PAINTER = "DELETE FROM painters_paintings WHERE painting_id = ?";
     private static final String DELETE_PAINTING = "DELETE FROM paintings WHERE id = ?";
+    private static final String GET_ROWS_AMOUNT = "SELECT COUNT(*) FROM paintings";
+    private static final String GET_PAINTINGS_IN_RANGE = "SELECT * FROM paintings OFFSET ? LIMIT ?";
+    private static final String GET_SORTED_BY_NAME_ASC = "SELECT * FROM paintings ORDER BY name OFFSET ? LIMIT ?";
+    private static final String GET_SORTED_BY_NAME_DESC = "SELECT * FROM paintings ORDER BY name DESC OFFSET ? LIMIT ?";
+    private static final String GET_SORTED_BY_YEAR_ASC = "SELECT * FROM paintings ORDER BY year OFFSET ? LIMIT ?";
+    private static final String GET_SORTED_BY_YEAR_DESC = "SELECT * FROM paintings ORDER BY year DESC OFFSET ? LIMIT ?";
+
+
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -95,6 +103,37 @@ public class PaintingDaoImpl implements PaintingDao {
         jdbcTemplate.update(DELETE_PAINTING, id);
     }
 
+    @Override
+    public Integer getRowsAmount() {
+        return jdbcTemplate.queryForObject(GET_ROWS_AMOUNT, Integer.class);
+    }
+
+    @Override
+    public List<Painting> getPaintingsInRange(Integer offset, Integer limit) {
+        return jdbcTemplate.query(GET_PAINTINGS_IN_RANGE, paintingRowMapper, offset, limit);
+    }
+
+    @Override
+    public List<Painting> getSortedByNameAsc(Integer offset, Integer limit) {
+        return jdbcTemplate.query(GET_SORTED_BY_NAME_ASC, paintingRowMapper, offset, limit);
+    }
+
+    @Override
+    public List<Painting> getSortedByNameDesc(Integer offset, Integer limit) {
+        return jdbcTemplate.query(GET_SORTED_BY_NAME_DESC, paintingRowMapper, offset, limit);
+    }
+
+    @Override
+    public List<Painting> getSortedByYearAsc(Integer offset, Integer limit) {
+        return jdbcTemplate.query(GET_SORTED_BY_YEAR_ASC, paintingRowMapper, offset, limit);
+    }
+
+    @Override
+    public List<Painting> getSortedByYearDesc(Integer offset, Integer limit) {
+        return jdbcTemplate.query(GET_SORTED_BY_YEAR_DESC, paintingRowMapper, offset, limit);
+    }
+
+    
     
 
 }

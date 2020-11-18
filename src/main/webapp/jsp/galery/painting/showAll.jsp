@@ -14,13 +14,13 @@
 	<spring:url value="/resources/img/icon.png" var="icon" />
 	<link rel="icon" href="${icon}" type="image/gif" sizes="32x32">
 	
-	<spring:url value="/resources/css/stylesGeneral.css" var="stylesGeneral" />
+	<spring:url value="/resources/css/stylesGallery.css" var="stylesGallery" />
     <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCss" />
     <spring:url value="/resources/js/bootstrap.min.js" var="bootstrapJs" />
     <spring:url value="/resources/js/jquery-3.3.1.min.js" var="jquery" />
 
 	
-    <link href="${stylesGeneral}" rel="stylesheet">
+    <link href="${stylesGallery}" rel="stylesheet">
     <link href="${bootstrapCss}" rel="stylesheet">
     <script src="${bootstrapJs}" type="text/javascript"></script>
     <script src="${jquery}" type="text/javascript"></script>
@@ -30,11 +30,44 @@
 <%
 	List<Painting> paintings = (List<Painting>) request.getAttribute("paintings");
 	Map<Integer, String> painterNames = (Map<Integer,String>) request.getAttribute("painterNames");
+	Integer pages = (Integer) request.getAttribute("pages");
+	Integer rowsAmount = (Integer) request.getAttribute("rowsAmount");
+	String urlName =(String) request.getAttribute("urlName");
+	Integer pageId = (Integer) request.getAttribute("pageId");
 %>
 
-  	<jsp:include page="../../components/navigationBarGalery.jsp"></jsp:include>   
-
-
+  	<jsp:include page="../../components/navigationBarGalery.jsp"></jsp:include>
+  	<%if(urlName != null){ %>
+  	<div class="container">
+  		<div class="row">
+  			<div class="col-12 align-self-center m-4">
+  				<b>Pages: </b> 
+				<%for(int i = 1; i <= pages; i++){
+				   if(pageId == i ){
+				       int num2 = i * 12;
+					   int num1 = num2 - 11;
+					   if(i == pages){
+					       num2 = rowsAmount;
+					   }
+				    %>
+					 <a href="<%out.print(urlName);%>?pageId=<%out.print(i);%>">
+				  		<button type="button" class="btn btn-light pageNavBtn"><%out.print(num1 + " - " + num2);%></button>
+				  	 </a>  
+				  <%  } else {
+					   int num2 = i * 12;
+					   int num1 = num2 - 11;
+					   if(i == pages){
+					       num2 = rowsAmount;
+					   }
+				    %>
+					 <a href="<%out.print(urlName);%>?pageId=<%out.print(i);%>">
+				  		<button type="button" class="btn btn-dark pageNavBtn"><%out.print(num1 + " - " + num2);%></button>
+				  	 </a>
+				<%} } %>
+			</div>
+		</div>
+	</div>
+	<%} %>
 
  	<div class="row row-cols-1 row-cols-lg-1 row-cols-xl-2 ml-2">
 	<%for(Painting painting : paintings){ %>

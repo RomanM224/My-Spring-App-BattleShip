@@ -60,7 +60,7 @@
     </li>
     <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"> Show Paintings </a>
     	<div class="dropdown-menu">
-	      	<spring:url value="/painting/showAll" var="showAll" htmlEscape="true"/>
+	      	<spring:url value="/painting/showAll?pageId=1" var="showAll" htmlEscape="true"/>
 	        <a class="dropdown-item" href="${showAll}">Show All</a>
 	      	<spring:url value="/painting/showPainting" var="showPainting" htmlEscape="true"/>
 	        <a class="dropdown-item" href="${showPainting}">Show Painting</a>

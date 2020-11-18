@@ -163,5 +163,78 @@ public class PaintingService {
         paintings.sort((Painting one, Painting two) ->two.getYear().compareTo(one.getYear()));
         return paintings;
     }
+    
+    public Integer getRowsAmount() {
+        return paintingDao.getRowsAmount();
+    }
+    
+    public List<Painting> getPaintingsInRange(Integer offset, Integer limit) {
+        List<Painting> paintings = paintingDao.getPaintingsInRange(offset, limit);
+        for(Painting painting : paintings) {
+            byte[] imageBase64Encoded = Base64.encodeBase64(painting.getImage());
+            try {
+                painting.setImageBase64Encoded(new String(imageBase64Encoded, "UTF-8"));
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+        }
+        return paintings;
+    }
+    
+    
+    public List<Painting> getSortedByNameAsc(Integer offset, Integer limit) {
+        List<Painting> paintings = paintingDao.getSortedByNameAsc(offset, limit);
+        for(Painting painting : paintings) {
+            byte[] imageBase64Encoded = Base64.encodeBase64(painting.getImage());
+            try {
+                painting.setImageBase64Encoded(new String(imageBase64Encoded, "UTF-8"));
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+        }
+        return paintings;    
+        }
+
+    
+    public List<Painting> getSortedByNameDesc(Integer offset, Integer limit) {
+        List<Painting> paintings = paintingDao.getSortedByNameDesc(offset, limit);
+        for(Painting painting : paintings) {
+            byte[] imageBase64Encoded = Base64.encodeBase64(painting.getImage());
+            try {
+                painting.setImageBase64Encoded(new String(imageBase64Encoded, "UTF-8"));
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+        }
+        return paintings; 
+        }
+
+    
+    public List<Painting> getSortedByYearAsc(Integer offset, Integer limit) {
+        List<Painting> paintings = paintingDao.getSortedByYearAsc(offset, limit);
+        for(Painting painting : paintings) {
+            byte[] imageBase64Encoded = Base64.encodeBase64(painting.getImage());
+            try {
+                painting.setImageBase64Encoded(new String(imageBase64Encoded, "UTF-8"));
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+        }
+        return paintings; 
+        }
+
+    
+    public List<Painting> getSortedByYearDesc(Integer offset, Integer limit) {
+        List<Painting> paintings = paintingDao.getSortedByYearDesc(offset, limit);
+        for(Painting painting : paintings) {
+            byte[] imageBase64Encoded = Base64.encodeBase64(painting.getImage());
+            try {
+                painting.setImageBase64Encoded(new String(imageBase64Encoded, "UTF-8"));
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+        }
+        return paintings; 
+        }
 
 }

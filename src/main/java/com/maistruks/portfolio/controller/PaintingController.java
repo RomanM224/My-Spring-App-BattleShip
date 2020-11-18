@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -121,10 +122,27 @@ public class PaintingController {
     }
 
     @GetMapping("/showAll")
-    public ModelAndView showAll() {
+    public ModelAndView showAll(ServletRequest request) {
         ModelAndView modelAndView = new ModelAndView("galery/painting/showAll");
-        List<Painting> paintings = paintingService.getAll();
+        String pageIdRequest = request.getParameter("pageId");
+        Integer pageId = 1;
+        if(pageIdRequest != null) {
+             pageId = Integer.valueOf(pageIdRequest);
+        }
+        Integer offset = pageId * 12 - 12;
+        List<Painting> paintings = paintingService.getPaintingsInRange(offset, 12);
+        Integer rowsAmount = paintingService.getRowsAmount();
+        Integer pages;
+        if(rowsAmount % 12 == 0) {
+            pages = rowsAmount / 12;
+        }else {
+            pages = rowsAmount / 12 + 1;
+        }
+        modelAndView.addObject("pageId", pageId);
+        modelAndView.addObject("rowsAmount", rowsAmount);
+        modelAndView.addObject("pages", pages);
         Map<Integer, String> painterNames = getPainterNames(paintings);
+        modelAndView.addObject("urlName", "showAll");
         modelAndView.addObject("painterNames", painterNames);
         modelAndView.addObject("paintings", paintings);
         return modelAndView;
@@ -210,40 +228,108 @@ public class PaintingController {
     }
 
     @GetMapping("/sortByNameAsc")
-    public ModelAndView sortByNameAsc() {
+    public ModelAndView sortByNameAsc(ServletRequest request) {
         ModelAndView modelAndView = new ModelAndView("galery/painting/showAll");
-        List<Painting> paintings = paintingService.getAllSortedByNameAsc();
+        String pageIdRequest = request.getParameter("pageId");
+        Integer pageId = 1;
+        if(pageIdRequest != null) {
+             pageId = Integer.valueOf(pageIdRequest);
+        }
+        Integer offset = pageId * 12 - 12;
+        List<Painting> paintings = paintingService.getSortedByNameAsc(offset, 12);
+        Integer rowsAmount = paintingService.getRowsAmount();
+        Integer pages;
+        if(rowsAmount % 12 == 0) {
+            pages = rowsAmount / 12;
+        }else {
+            pages = rowsAmount / 12 + 1;
+        }
+        modelAndView.addObject("pageId", pageId);
+        modelAndView.addObject("rowsAmount", rowsAmount);
+        modelAndView.addObject("pages", pages);
         Map<Integer, String> painterNames = getPainterNames(paintings);
+        modelAndView.addObject("urlName", "sortByNameAsc");
         modelAndView.addObject("painterNames", painterNames);
         modelAndView.addObject("paintings", paintings);
         return modelAndView;
     }
 
     @GetMapping("/sortByNameDsc")
-    public ModelAndView sortByNameDsc() {
+    public ModelAndView sortByNameDsc(ServletRequest request) {
         ModelAndView modelAndView = new ModelAndView("galery/painting/showAll");
-        List<Painting> paintings = paintingService.getAllSortedByNameDsc();
+        String pageIdRequest = request.getParameter("pageId");
+        Integer pageId = 1;
+        if(pageIdRequest != null) {
+             pageId = Integer.valueOf(pageIdRequest);
+        }
+        Integer offset = pageId * 12 - 12;
+        List<Painting> paintings = paintingService.getSortedByNameDesc(offset, 12);
+        Integer rowsAmount = paintingService.getRowsAmount();
+        Integer pages;
+        if(rowsAmount % 12 == 0) {
+            pages = rowsAmount / 12;
+        }else {
+            pages = rowsAmount / 12 + 1;
+        }
+        modelAndView.addObject("pageId", pageId);
+        modelAndView.addObject("rowsAmount", rowsAmount);
+        modelAndView.addObject("pages", pages);
         Map<Integer, String> painterNames = getPainterNames(paintings);
+        modelAndView.addObject("urlName", "sortByNameDsc");
         modelAndView.addObject("painterNames", painterNames);
         modelAndView.addObject("paintings", paintings);
         return modelAndView;
     }
 
     @GetMapping("/sortByYearAsc")
-    public ModelAndView sortByYearAsc() {
+    public ModelAndView sortByYearAsc(ServletRequest request) {
         ModelAndView modelAndView = new ModelAndView("galery/painting/showAll");
-        List<Painting> paintings = paintingService.getAllSortedByYearAsc();
+        String pageIdRequest = request.getParameter("pageId");
+        Integer pageId = 1;
+        if(pageIdRequest != null) {
+             pageId = Integer.valueOf(pageIdRequest);
+        }
+        Integer offset = pageId * 12 - 12;
+        List<Painting> paintings = paintingService.getSortedByYearAsc(offset, 12);
+        Integer rowsAmount = paintingService.getRowsAmount();
+        Integer pages;
+        if(rowsAmount % 12 == 0) {
+            pages = rowsAmount / 12;
+        }else {
+            pages = rowsAmount / 12 + 1;
+        }
+        modelAndView.addObject("pageId", pageId);
+        modelAndView.addObject("rowsAmount", rowsAmount);
+        modelAndView.addObject("pages", pages);
         Map<Integer, String> painterNames = getPainterNames(paintings);
+        modelAndView.addObject("urlName", "sortByYearAsc");
         modelAndView.addObject("painterNames", painterNames);
         modelAndView.addObject("paintings", paintings);
         return modelAndView;
     }
 
     @GetMapping("/sortByYearDsc")
-    public ModelAndView sortByYearDsc() {
+    public ModelAndView sortByYearDsc(ServletRequest request) {
         ModelAndView modelAndView = new ModelAndView("galery/painting/showAll");
-        List<Painting> paintings = paintingService.getAllSortedByYearDsc();
+        String pageIdRequest = request.getParameter("pageId");
+        Integer pageId = 1;
+        if(pageIdRequest != null) {
+             pageId = Integer.valueOf(pageIdRequest);
+        }
+        Integer offset = pageId * 12 - 12;
+        List<Painting> paintings = paintingService.getSortedByYearDesc(offset, 12);
+        Integer rowsAmount = paintingService.getRowsAmount();
+        Integer pages;
+        if(rowsAmount % 12 == 0) {
+            pages = rowsAmount / 12;
+        }else {
+            pages = rowsAmount / 12 + 1;
+        }
+        modelAndView.addObject("pageId", pageId);
+        modelAndView.addObject("rowsAmount", rowsAmount);
+        modelAndView.addObject("pages", pages);
         Map<Integer, String> painterNames = getPainterNames(paintings);
+        modelAndView.addObject("urlName", "sortByYearDsc");
         modelAndView.addObject("painterNames", painterNames);
         modelAndView.addObject("paintings", paintings);
         return modelAndView;

@@ -27,11 +27,13 @@
   		<div class="col-7">
   		<h1 class="my-5">Hei!</h1>
   		<div>
-		Det er min portfolio applikasjon. Jeg har skrevet denne applikasjon for å vise hvordan jeg kan kode.<br><br>
-		Jeg har skrevet 2 små applikasjoner, spill "Battleship" og applikasjon "Gallery".<br><br>
+		Det er min <b>portfolio</b> applikasjon. Jeg har skrevet denne applikasjon for å vise hvordan jeg kan kode.<br><br>
+		Jeg har skrevet 2 små applikasjoner, spill  <b>"Battleship"</b> og applikasjon <b>"Gallery"</b>.<br><br>
 		I denne applikasjon brukte jeg disse teknologiene: <b>Java, Spring, Spring Mvc, Spring JdbcTemplate, SQL, 
-		PostgreSQL, Bootstrap 5, Jsp, Html, CSS, JUnit, Mockito.<br><br><br>
-		Med Vennlig Hilsen<br>
+		PostgreSQL, Bootstrap 5, Jsp, Html, CSS, JUnit, Mockito.</b><br><br>
+		Jeg deployet denne applikasjon på <b>Amazon Web Services(AWS).</b>
+		<br><br><br>
+		<b>Med Vennlig Hilsen<br>
 		Romans Maistruks</b>
 		</div>
 		<div class="container mt-5">
@@ -70,19 +72,19 @@
 	<spring:url value="/battleShip/startGame" var="startGame" htmlEscape="true"/>
     <spring:url value="/resources/img/battleship_btn.jpg" var="battleship_btn" />
     <a class="btn mainBtn border border-primary" href="${startGame}" style="background-image: url('${battleship_btn}');">
-    	<span class="btn_gallery_text">Play<br>Battleship</span>
+    	<span class="mainBtn_Text">Play<br>Battleship</span>
     </a>
     
 	<spring:url value="/painting/showAll" var="showAll" htmlEscape="true"/>
 	<spring:url value="/resources/img/galery_btn.jpg" var="galery_btn" />
 	<a class="btn mainBtn border border-warning" href="${showAll}"  style="background-image: url('${galery_btn}');">
-		<span class="btn_gallery_text">View<br>Gallery</span>
+		<span class="mainBtn_Text">View<br>Gallery</span>
 	</a>
 	
 	<spring:url value="/cv" var="cv" htmlEscape="true"/>
 	<spring:url value="/resources/img/cv_btn.jpg" var="cv_btn" />
 	<a class="btn mainBtn border border-success" href="${cv}"  style="background-image: url('${cv_btn}');">
-		<span class="btn_gallery_text"><br>CV</span>
+		<span class="mainBtn_Text"><br>CV</span>
 	</a>
 	</div>
 	</div>

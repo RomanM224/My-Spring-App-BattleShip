@@ -23,5 +23,17 @@ public interface PaintingDao {
     List<Painting> getByStyle(Style style);
     
     void delete(Integer id);
+    
+    Integer getRowsAmount();
+    
+    List<Painting> getPaintingsInRange(Integer offset, Integer limit);
+    
+    List<Painting> getSortedByNameAsc(Integer offset, Integer limit);
+    
+    List<Painting> getSortedByNameDesc(Integer offset, Integer limit);
+    
+    List<Painting> getSortedByYearAsc(Integer offset, Integer limit);
+    
+    List<Painting> getSortedByYearDesc(Integer offset, Integer limit);
 
 }

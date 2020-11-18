@@ -13,13 +13,13 @@
 	<spring:url value="/resources/img/icon.png" var="icon" />
 	<link rel="icon" href="${icon}" type="image/gif" sizes="32x32">
 	
-    <spring:url value="/resources/css/stylesGeneral.css" var="stylesGeneral" />
+    <spring:url value="/resources/css/stylesGallery.css" var="stylesGallery" />
     <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCss" />
     <spring:url value="/resources/js/bootstrap.min.js" var="bootstrapJs" />
     <spring:url value="/resources/js/jquery-3.3.1.min.js" var="jquery" />
 
 	
-    <link href="${stylesGeneral}" rel="stylesheet">
+    <link href="${stylesGallery}" rel="stylesheet">
     <link href="${bootstrapCss}" rel="stylesheet">
     <script src="${bootstrapJs}" type="text/javascript"></script>
     <script src="${jquery}" type="text/javascript"></script>
@@ -31,8 +31,7 @@
 	List<Painter> painters = (List<Painter>) request.getAttribute("painters");
 	%>
   
-  	<jsp:include page="../../components/navigationBarGalery.jsp"></jsp:include>   
-
+  	<jsp:include page="../../components/navigationBarGalery.jsp"></jsp:include>
 	
 	<div class="container bg-light mt-5">
 		<h3>Painters:</h3>

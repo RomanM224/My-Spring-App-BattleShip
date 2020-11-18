@@ -1,0 +1,35 @@
+@charset "ISO-8859-1";
+
+.bg-color {
+	background-color: #f2f9ff;
+}
+
+.btn_battleship_text{
+	font-size: 40px;
+	color: #00ff80;
+	font-weight: bold;
+}
+
+.bg-image-galery{
+	background-color: #686868;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-attachment: fixed;	
+}
+
+.card{
+	box-shadow: 5px 5px 15px #3c3c3c;
+}
+
+.card-bg-color{
+	background: #d8d8d8;
+} 
+
+div.myCard {
+	background: rgba(194, 194, 194, 0.2);
+}
+
+.pageNavBtn{
+	height:40px;
+	width: 80px;
+}

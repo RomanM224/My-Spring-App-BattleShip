@@ -14,7 +14,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Battle Ship</title>
-<spring:url value="/resources/css/stylesGeneral.css" var="stylesGeneral" />
+
+	<spring:url value="/resources/img/icon.png" var="icon" />
+	<link rel="icon" href="${icon}" type="image/gif" sizes="32x32">
+	
+	<spring:url value="/resources/css/stylesGeneral.css" var="stylesGeneral" />
 	<spring:url value="/resources/css/stylesBattleShip.css" var="stylesBattleShip" />
     <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCss" />
     <spring:url value="/resources/js/bootstrap.min.js" var="bootstrapJs" />
@@ -28,11 +32,8 @@
 
 </head>
 <body class="bg-color">
-
-	  	<jsp:include page="../components/navigationBarBattleShip.jsp"></jsp:include>   
-
 	<%
-	    Fleet myFleet = (Fleet) session.getAttribute("myFleet");
+	    		Fleet myFleet = (Fleet) session.getAttribute("myFleet");
 				Fleet enemyFleet = (Fleet) session.getAttribute("enemyFleet");
 				FieldChecker fieldChecker = (FieldChecker) session.getAttribute("fieldChecker");
 				TableCreater tableCreater = (TableCreater) session.getAttribute("tableCreater");
@@ -41,6 +42,9 @@
 				List<Field> myShots = (List<Field>) session.getAttribute("myShots");
 				List<Field> enemyShipsFields = (List<Field>) session.getAttribute("enemyShipsFields");
 	%>
+
+	  	<jsp:include page="../components/navigationBarBattleShip.jsp"></jsp:include>   
+
 	<div class ="container-fluid mt-2 ml-5">
 	<div class ="row">
 	 <div class="col-lg-5 col-xl-4 border border-warning">

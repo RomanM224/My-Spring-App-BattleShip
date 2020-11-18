@@ -9,6 +9,10 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Show All Painters</title>
+    
+	<spring:url value="/resources/img/icon.png" var="icon" />
+	<link rel="icon" href="${icon}" type="image/gif" sizes="32x32">
+	
     <spring:url value="/resources/css/stylesGeneral.css" var="stylesGeneral" />
     <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCss" />
     <spring:url value="/resources/js/bootstrap.min.js" var="bootstrapJs" />
@@ -23,12 +27,12 @@
   </head>
   <spring:url value="/resources/img/galery_background.jpg" var="galery_background" />
   <body class="bg-image-galery" style="background-image: url('${galery_background}');">
-  
-  	<jsp:include page="../../components/navigationBarGalery.jsp"></jsp:include>   
-
 	<%
 	List<Painter> painters = (List<Painter>) request.getAttribute("painters");
 	%>
+  
+  	<jsp:include page="../../components/navigationBarGalery.jsp"></jsp:include>   
+
 	
 	<div class="container bg-light mt-5">
 		<h3>Painters:</h3>

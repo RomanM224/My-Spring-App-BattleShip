@@ -7,7 +7,11 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Get Painter By Id</title>
+    <title>Show Painter By Id</title>
+    
+	<spring:url value="/resources/img/icon.png" var="icon" />
+	<link rel="icon" href="${icon}" type="image/gif" sizes="32x32">
+	
     <spring:url value="/resources/css/stylesGeneral.css" var="stylesGeneral" />
     <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCss" />
     <spring:url value="/resources/js/bootstrap.min.js" var="bootstrapJs" />
@@ -22,12 +26,12 @@
   </head>
   <spring:url value="/resources/img/galery_background.jpg" var="galery_background" />
   <body class="bg-image-galery" style="background-image: url('${galery_background}');">
-  
-  	<jsp:include page="../../components/navigationBarGalery.jsp"></jsp:include>   
 	<%
   	List<Painter> painters = (List<Painter>) request.getAttribute("painters");
 	String info = (String) request.getAttribute("info");
   	%>
+  
+  	<jsp:include page="../../components/navigationBarGalery.jsp"></jsp:include>   
 	<div class="container m-5">
 		<form class="form-group" action="../painter/showById" method="post">
 			<select class="form-control col-3  <%if(info != null && info.equals("Painter not exist")){out.print("is-invalid");} %>" name="id">

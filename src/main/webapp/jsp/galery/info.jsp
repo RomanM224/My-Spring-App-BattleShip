@@ -6,6 +6,10 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Main</title>
+    
+    <spring:url value="/resources/img/icon.png" var="icon" />
+	<link rel="icon" href="${icon}" type="image/gif" sizes="32x32">
+	
     <spring:url value="/resources/css/stylesGeneral.css" var="stylesGeneral" />
     <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCss" />
     <spring:url value="/resources/js/bootstrap.min.js" var="bootstrapJs" />

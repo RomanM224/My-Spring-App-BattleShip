@@ -5,7 +5,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>JavaSpringWebApp</title>
+    <title>Battle Ship</title>
     
 	<spring:url value="/resources/css/stylesGeneral.css" var="stylesGeneral" />
     <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCss" />
@@ -21,7 +21,10 @@
   <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light navBar">
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav ml-5">
     <li class="nav-item">
     	<spring:url value="/" var="homeUrl" htmlEscape="true"/>

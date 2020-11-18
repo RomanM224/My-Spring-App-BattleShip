@@ -99,9 +99,16 @@
                         <warSourceDirectory>src/main/webapp</warSourceDirectory>
                         <warName>Portfolio</warName>
                         <failOnMissingWebXml>false</failOnMissingWebXml>
-                    </configuration>
+                        <archive>
+					          <manifest>
+					            <addClasspath>true</addClasspath>
+					            <classpathPrefix>lib/</classpathPrefix>
+					            <mainClass>com.maistruks.portfolio.Main</mainClass>
+					          </manifest>
+			        	</archive>
+                   </configuration>
                 </plugin>
-                
+			    
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>

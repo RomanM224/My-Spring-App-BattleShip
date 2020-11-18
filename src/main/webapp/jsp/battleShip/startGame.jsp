@@ -10,6 +10,9 @@
 <meta charset="UTF-8">
 <title>Start Game</title>
 
+	<spring:url value="/resources/img/icon.png" var="icon" />
+	<link rel="icon" href="${icon}" type="image/gif" sizes="32x32">
+
 	<spring:url value="/resources/css/stylesGeneral.css" var="stylesGeneral" />
 	<spring:url value="/resources/css/stylesBattleShip.css" var="stylesBattleShip" />
     <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCss" />
@@ -24,19 +27,17 @@
 
 </head>
 <body class="bg-color">
-
-  	<jsp:include page="../components/navigationBarBattleShip.jsp"></jsp:include>   
-	
-	<spring:url value="/resources/img/ships_example.jpg" var="ships_example" />
-
 	<%
 		FieldChecker fieldChecker = (FieldChecker)session.getAttribute("fieldChecker");
 		TableCreater tableCreater = (TableCreater)session.getAttribute("tableCreater");
 	%>
+  	<jsp:include page="../components/navigationBarBattleShip.jsp"></jsp:include>   
+	
+	<spring:url value="/resources/img/ships_example.jpg" var="ships_example" />
+
 	<div class="container text-danger mt-5">
 	<% 
 	String exception = (String) session.getAttribute("exception");
-	//	out.print("<b> MESSAGE  MESSAGE  MESSAGE  MESSAGE  MESSAGE </b>");
 	if(exception != null){
 	    out.print("<p><b>" + exception + "</b></p>");
 	}%>
@@ -45,7 +46,7 @@
 	<div class="container-fluid m-5">
 	<form action="../battleShip/startGame" method="POST">
 	<div class="row">
-	<div class="col-4">
+	<div class="col-lg-8 col-xl-4">
 	<table>
 	<%
  	    for(int i = 0; i <= 10; i++){
@@ -64,7 +65,7 @@
 	%>
 	</table>
 	</div>
-	<div class="col-2">
+	<div class="col-lg-4 col-xl-2">
 	<input type="submit" class="btn btn-success btn-lg shotBtn font-weight-bold" value="Start Game">
 	</div>
 	<div class="col-5">

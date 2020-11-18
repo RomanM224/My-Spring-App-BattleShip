@@ -8,6 +8,9 @@
 <meta charset="UTF-8">
 <title>Battle Ship</title>
 
+	<spring:url value="/resources/img/icon.png" var="icon" />
+	<link rel="icon" href="${icon}" type="image/gif" sizes="32x32">
+
 </head>
 <body class="bg-color">
 	  	<jsp:include page="../components/navigationBarBattleShip.jsp"></jsp:include>   

@@ -10,6 +10,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Show All Paintings</title>
+
+	<spring:url value="/resources/img/icon.png" var="icon" />
+	<link rel="icon" href="${icon}" type="image/gif" sizes="32x32">
+	
 	<spring:url value="/resources/css/stylesGeneral.css" var="stylesGeneral" />
     <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCss" />
     <spring:url value="/resources/js/bootstrap.min.js" var="bootstrapJs" />
@@ -23,17 +27,16 @@
 </head>
 <spring:url value="/resources/img/galery_background.jpg" var="galery_background" />
   <body class="bg-image-galery" style="background-image: url('${galery_background}');">
-
-  	<jsp:include page="../../components/navigationBarGalery.jsp"></jsp:include>   
 <%
 	List<Painting> paintings = (List<Painting>) request.getAttribute("paintings");
 	Map<Integer, String> painterNames = (Map<Integer,String>) request.getAttribute("painterNames");
-	//Painting painting = paintings.get(0);
 %>
 
+  	<jsp:include page="../../components/navigationBarGalery.jsp"></jsp:include>   
 
 
- 	<div class="row row-cols-1 row-cols-md-2 ml-2">
+
+ 	<div class="row row-cols-1 row-cols-lg-1 row-cols-xl-2 ml-2">
 	<%for(Painting painting : paintings){ %>
 		<div class="col mb-4">
 			<div class="card my-3 myCard" style="width: 37rem;">
@@ -48,20 +51,6 @@
 		</div>
 	<%} %>
 	</div> 
-	
-	<%-- <div class="container m-2">
-		<div class="col-5 myCard">
-			<div>
-			<img alt="img" src="data:image/jpeg;base64,<%out.println(painting.getImageBase64Encoded()); %>"/>
-			</div>
-			<div >
-					<p><b>Name: </b><%out.print(painting.getName()); %></p>
-				    <p><b>Painter: </b><%out.print(painterNames.get(painting.getId())); %></p>
-				    <p><b>Style: </b><%out.print(painting.getStyle().getStyle()); %></p>
-				    <p><b>Year: </b><%out.print(painting.getYear()); %></p>
-				</div>
-		</div>
-	</div> --%>
 	
 </body>
 </html>

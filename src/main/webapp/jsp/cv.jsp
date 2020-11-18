@@ -6,7 +6,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Start Game</title>
+<title>CV</title>
+
+	<spring:url value="/resources/img/icon.png" var="icon" />
+	<link rel="icon" href="${icon}" type="image/gif" sizes="32x32">
 
 	<spring:url value="/resources/css/stylesGeneral.css" var="stylesGeneral" />
     <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCss" />
@@ -21,8 +24,11 @@
 </head>
 <body class="bg-color">
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light navBar">
-	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	<nav class="navbar navbar-expand-sm navbar-light bg-light navBar">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+   			<span class="navbar-toggler-icon"></span>
+    </button>
+	  <div class="collapse navbar-collapse" id="navbarNavDropdown">
 	    <ul class="navbar-nav ml-5">
 	    <li class="nav-item">
 	    	<spring:url value="/" var="homeUrl" htmlEscape="true"/>
@@ -35,9 +41,10 @@
 	<spring:url value="/resources/img/cv.jpg" var="cv" />
 	<div class="container m-5">
 		<div class="row">
-			<div class="col-5">
+			<div class="col-lg-12 col-xl-9">
 			<img alt="" src="${cv}" width="800">
-			</div>
+			</div >
+			
 		</div>	
 	</div>
 	

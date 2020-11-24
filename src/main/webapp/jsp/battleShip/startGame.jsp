@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ page isELIgnored="false"%>
-<%@page import="com.maistruks.portfolio.service.battleShip.TableCreater"%>
-<%@page import="com.maistruks.portfolio.service.battleShip.FieldChecker"%>
+<%@page import="com.maistruks.portfolio.battleShip.service.TableCreater"%>
+<%@page import="com.maistruks.portfolio.battleShip.service.FieldChecker"%>
 <!DOCTYPE html>
 <html>
 <head>

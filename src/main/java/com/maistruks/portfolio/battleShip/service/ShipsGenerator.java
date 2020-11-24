@@ -1,4 +1,4 @@
-package com.maistruks.portfolio.service.battleShip;
+package com.maistruks.portfolio.battleShip.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.Random;
 
 import org.springframework.stereotype.Service;
 
-import com.maistruks.portfolio.model.battleShip.Field;
+import com.maistruks.portfolio.battleShip.model.Field;
 
 
 @Service

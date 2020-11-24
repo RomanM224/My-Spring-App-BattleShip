@@ -2,8 +2,8 @@ package com.maistruks.portfolio.gallery.mapper;
 
 import org.springframework.stereotype.Component;
 
-import com.maistruks.portfolio.model.gallery.Painter;
-import com.maistruks.portfolio.model.gallery.dto.PainterDto;
+import com.maistruks.portfolio.gallery.model.Painter;
+import com.maistruks.portfolio.gallery.model.dto.PainterDto;
 
 @Component
 public class PainterMapper {

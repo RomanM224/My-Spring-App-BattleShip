@@ -2,7 +2,7 @@ package com.maistruks.portfolio.gallery.dao;
 
 import java.util.List;
 
-import com.maistruks.portfolio.model.gallery.Painter;
+import com.maistruks.portfolio.gallery.model.Painter;
 
 public interface PainterDao {
 

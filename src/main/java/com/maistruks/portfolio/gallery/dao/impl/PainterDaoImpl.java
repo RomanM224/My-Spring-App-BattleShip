@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.maistruks.portfolio.gallery.dao.PainterDao;
 import com.maistruks.portfolio.gallery.dao.impl.rowMapper.PainterRowMapper;
-import com.maistruks.portfolio.model.gallery.Painter;
+import com.maistruks.portfolio.gallery.model.Painter;
 
 @Repository
 public class PainterDaoImpl implements PainterDao {

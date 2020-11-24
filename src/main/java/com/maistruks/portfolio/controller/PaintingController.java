@@ -20,12 +20,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.maistruks.portfolio.exception.PainterException;
 import com.maistruks.portfolio.exception.PaintingException;
-import com.maistruks.portfolio.model.gallery.Painter;
-import com.maistruks.portfolio.model.gallery.Painting;
-import com.maistruks.portfolio.model.gallery.Style;
-import com.maistruks.portfolio.model.gallery.dto.PaintingDto;
-import com.maistruks.portfolio.service.gallery.PainterService;
-import com.maistruks.portfolio.service.gallery.PaintingService;
+import com.maistruks.portfolio.gallery.mapper.PaintingMapper;
+import com.maistruks.portfolio.gallery.model.Painter;
+import com.maistruks.portfolio.gallery.model.Painting;
+import com.maistruks.portfolio.gallery.model.Style;
+import com.maistruks.portfolio.gallery.model.dto.PaintingDto;
+import com.maistruks.portfolio.gallery.service.PainterService;
+import com.maistruks.portfolio.gallery.service.PaintingService;
 
 @Controller
 @RequestMapping("/painting")
@@ -36,6 +37,9 @@ public class PaintingController {
 
     @Autowired
     private PainterService painterService;
+    
+    @Autowired
+    private PaintingMapper paintingMapper;
 
     @GetMapping("/create")
     public ModelAndView create() {
@@ -51,9 +55,10 @@ public class PaintingController {
     public ModelAndView create(@ModelAttribute PaintingDto paintingDto,
             @RequestParam(required = false, defaultValue = "") Integer painterId) {
         try {
+            Painting painting = paintingMapper.mapPaintingDtoToPainting(paintingDto);
             ModelAndView modelAndView = new ModelAndView("galery/info");
-            paintingService.create(paintingDto, Integer.valueOf(painterId));
-            return modelAndView.addObject("info", "Painter created");
+            paintingService.create(painting, Integer.valueOf(painterId));
+            return modelAndView.addObject("info", "Painting created");
         } catch (PaintingException e) {
             ModelAndView modelAndView = new ModelAndView("galery/painting/create");
             List<Painter> painters = painterService.getAll();
@@ -80,9 +85,10 @@ public class PaintingController {
     public ModelAndView updateFullPaintingInfo(@ModelAttribute PaintingDto paintingDto,
             @RequestParam(required = false, defaultValue = "") Integer painterId) {
         try {
+            Painting painting = paintingMapper.mapPaintingDtoToPainting(paintingDto);
             ModelAndView modelAndView = new ModelAndView("galery/info");
-            paintingService.updateFullPaintingInfo(paintingDto, painterId);
-            return modelAndView.addObject("info", "Painter created");
+            paintingService.updateFullPaintingInfo(painting, painterId);
+            return modelAndView.addObject("info", "Painting Updated");
         } catch (PaintingException e) {
             ModelAndView modelAndView = new ModelAndView("galery/painting/updateFullPaintingInfo");
             List<Painter> painters = painterService.getAll();
@@ -109,8 +115,9 @@ public class PaintingController {
     public ModelAndView updatePaintingInfo(@ModelAttribute PaintingDto paintingDto) {
         try {
             ModelAndView modelAndView = new ModelAndView("galery/info");
-            paintingService.updatePaintingInfo(paintingDto);
-            return modelAndView.addObject("info", "Painter created");
+            Painting painting = paintingMapper.mapPaintingDtoToPainting(paintingDto);
+            paintingService.updatePaintingInfo(painting);
+            return modelAndView.addObject("info", "Painting Updated");
         } catch (PaintingException e) {
             ModelAndView modelAndView = new ModelAndView("galery/painting/updatePaintingInfo");
             List<Painting> paintings = paintingService.getAll();
@@ -141,7 +148,7 @@ public class PaintingController {
         modelAndView.addObject("pageId", pageId);
         modelAndView.addObject("rowsAmount", rowsAmount);
         modelAndView.addObject("pages", pages);
-        Map<Integer, String> painterNames = getPainterNames(paintings);
+        Map<Integer, String> painterNames = paintingService.getPainterNames(paintings);
         modelAndView.addObject("urlName", "showAll");
         modelAndView.addObject("painterNames", painterNames);
         modelAndView.addObject("paintings", paintings);
@@ -221,7 +228,7 @@ public class PaintingController {
         ModelAndView modelAndView = new ModelAndView("galery/painting/showAll");
         Style style = Style.valueOf(myStyle);
         List<Painting> paintings = paintingService.getByStyle(style);
-        Map<Integer, String> painterNames = getPainterNames(paintings);
+        Map<Integer, String> painterNames = paintingService.getPainterNames(paintings);
         modelAndView.addObject("painterNames", painterNames);
         modelAndView.addObject("paintings", paintings);
         return modelAndView;
@@ -247,7 +254,7 @@ public class PaintingController {
         modelAndView.addObject("pageId", pageId);
         modelAndView.addObject("rowsAmount", rowsAmount);
         modelAndView.addObject("pages", pages);
-        Map<Integer, String> painterNames = getPainterNames(paintings);
+        Map<Integer, String> painterNames = paintingService.getPainterNames(paintings);
         modelAndView.addObject("urlName", "sortByNameAsc");
         modelAndView.addObject("painterNames", painterNames);
         modelAndView.addObject("paintings", paintings);
@@ -274,7 +281,7 @@ public class PaintingController {
         modelAndView.addObject("pageId", pageId);
         modelAndView.addObject("rowsAmount", rowsAmount);
         modelAndView.addObject("pages", pages);
-        Map<Integer, String> painterNames = getPainterNames(paintings);
+        Map<Integer, String> painterNames = paintingService.getPainterNames(paintings);
         modelAndView.addObject("urlName", "sortByNameDsc");
         modelAndView.addObject("painterNames", painterNames);
         modelAndView.addObject("paintings", paintings);
@@ -301,7 +308,7 @@ public class PaintingController {
         modelAndView.addObject("pageId", pageId);
         modelAndView.addObject("rowsAmount", rowsAmount);
         modelAndView.addObject("pages", pages);
-        Map<Integer, String> painterNames = getPainterNames(paintings);
+        Map<Integer, String> painterNames = paintingService.getPainterNames(paintings);
         modelAndView.addObject("urlName", "sortByYearAsc");
         modelAndView.addObject("painterNames", painterNames);
         modelAndView.addObject("paintings", paintings);
@@ -328,7 +335,7 @@ public class PaintingController {
         modelAndView.addObject("pageId", pageId);
         modelAndView.addObject("rowsAmount", rowsAmount);
         modelAndView.addObject("pages", pages);
-        Map<Integer, String> painterNames = getPainterNames(paintings);
+        Map<Integer, String> painterNames = paintingService.getPainterNames(paintings);
         modelAndView.addObject("urlName", "sortByYearDsc");
         modelAndView.addObject("painterNames", painterNames);
         modelAndView.addObject("paintings", paintings);
@@ -357,12 +364,5 @@ public class PaintingController {
         }
     }
 
-    public Map<Integer, String> getPainterNames(List<Painting> paintings) {
-        Map<Integer, String> painterNames = new HashMap<>();
-        for (Painting painting : paintings) {
-            Painter painter = painterService.getByPaintingId(painting.getId());
-            painterNames.put(painting.getId(), painter.getFullName());
-        }
-        return painterNames;
-    }
+    
 }

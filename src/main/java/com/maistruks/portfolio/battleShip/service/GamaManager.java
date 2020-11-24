@@ -1,13 +1,13 @@
-package com.maistruks.portfolio.service.battleShip;
+package com.maistruks.portfolio.battleShip.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.maistruks.portfolio.model.battleShip.Field;
-import com.maistruks.portfolio.model.battleShip.Fleet;
-import com.maistruks.portfolio.model.battleShip.Ship;
+import com.maistruks.portfolio.battleShip.model.Field;
+import com.maistruks.portfolio.battleShip.model.Fleet;
+import com.maistruks.portfolio.battleShip.model.Ship;
 
 
 

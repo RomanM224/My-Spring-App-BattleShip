@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 
-import com.maistruks.portfolio.model.gallery.Painter;
+import com.maistruks.portfolio.gallery.model.Painter;
 
 @Component
 public class PainterRowMapper implements RowMapper<Painter> {

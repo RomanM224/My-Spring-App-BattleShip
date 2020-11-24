@@ -6,8 +6,8 @@ import java.sql.SQLException;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 
-import com.maistruks.portfolio.model.gallery.Painting;
-import com.maistruks.portfolio.model.gallery.Style;
+import com.maistruks.portfolio.gallery.model.Painting;
+import com.maistruks.portfolio.gallery.model.Style;
 
 @Component
 public class PaintingRowMapper implements RowMapper<Painting> {
@@ -19,7 +19,9 @@ public class PaintingRowMapper implements RowMapper<Painting> {
         String name = resultSet.getString("name");
         Style style = Style.valueOf(resultSet.getString("style"));
         byte[] file = resultSet.getBytes("image");
-        return new Painting(id, year, name, style, file);
+        Painting painting = new Painting(id, year, name, style);
+        painting.setImage(file);
+        return painting;
     }
 
 }

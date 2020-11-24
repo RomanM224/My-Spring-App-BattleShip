@@ -1,4 +1,4 @@
-package com.maistruks.portfolio.model.battleShip;
+package com.maistruks.portfolio.battleShip.model;
 
 import java.util.ArrayList;
 import java.util.List;

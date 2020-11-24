@@ -1,4 +1,4 @@
-package com.maistruks.portfolio.service.battleShip;
+package com.maistruks.portfolio.battleShip.service;
 
 public class TableCreater {
 

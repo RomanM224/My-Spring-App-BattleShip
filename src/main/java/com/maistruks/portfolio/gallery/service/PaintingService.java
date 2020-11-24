@@ -1,9 +1,11 @@
-package com.maistruks.portfolio.service.gallery;
+package com.maistruks.portfolio.gallery.service;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +15,10 @@ import com.maistruks.portfolio.exception.PainterException;
 import com.maistruks.portfolio.exception.PaintingException;
 import com.maistruks.portfolio.gallery.dao.PaintingDao;
 import com.maistruks.portfolio.gallery.mapper.PaintingMapper;
-import com.maistruks.portfolio.model.gallery.Painter;
-import com.maistruks.portfolio.model.gallery.Painting;
-import com.maistruks.portfolio.model.gallery.Style;
-import com.maistruks.portfolio.model.gallery.dto.PaintingDto;
+import com.maistruks.portfolio.gallery.model.Painter;
+import com.maistruks.portfolio.gallery.model.Painting;
+import com.maistruks.portfolio.gallery.model.Style;
+import com.maistruks.portfolio.gallery.model.dto.PaintingDto;
 
 @Service
 public class PaintingService {
@@ -30,48 +32,45 @@ public class PaintingService {
     @Autowired
     private PaintingMapper paintingMapper;
 
-    public void create(PaintingDto paintingDto, Integer painterId) throws PaintingException {
+    public void create(Painting painting, Integer painterId) throws PaintingException {
         if(painterId == null) {
             throw new PaintingException("Painter not exist");
         }
-        if(paintingDto.getName() == null || paintingDto.getName().isEmpty()) {
+        if(painting.getName() == null || painting.getName().isEmpty()) {
             throw new PaintingException("Painting Name is invalid");
         }
-        if(paintingDto.getYear() == null) {
+        if(painting.getYear() == null) {
             throw new PaintingException("Year is invalid");
         }
-        Painting painting = paintingMapper.mapPaintingDtoToPainting(paintingDto);
         paintingDao.create(painting, Integer.valueOf(painterId));
     }
 
-    public void updateFullPaintingInfo(PaintingDto paintingDto, Integer painterId) throws PaintingException {
+    public void updateFullPaintingInfo(Painting painting, Integer painterId) throws PaintingException {
         if(painterId == null) {
             throw new PaintingException("Painter not exist");
         }
-        if(paintingDto.getId() == null) {
+        if(painting.getId() == null) {
             throw new PaintingException("Painting not exist");
         }
-        if(paintingDto.getName() == null || paintingDto.getName().isEmpty()) {
+        if(painting.getName() == null || painting.getName().isEmpty()) {
             throw new PaintingException("Painting Name is invalid");
         }
-        if(paintingDto.getYear() == null) {
+        if(painting.getYear() == null) {
             throw new PaintingException("Year is invalid");
         }
-        Painting painting = paintingMapper.mapPaintingDtoToPainting(paintingDto);
         paintingDao.updateFullPaintingInfo(painting, Integer.valueOf(painterId));
     }
     
-    public void updatePaintingInfo(PaintingDto paintingDto) throws PaintingException {
-        if(paintingDto.getId() == null) {
+    public void updatePaintingInfo(Painting painting) throws PaintingException {
+        if(painting.getId() == null) {
             throw new PaintingException("Painting not exist");
         }
-        if(paintingDto.getName() == null || paintingDto.getName().isEmpty()) {
+        if(painting.getName() == null || painting.getName().isEmpty()) {
             throw new PaintingException("Painting Name is invalid");
         }
-        if(paintingDto.getYear() == null) {
+        if(painting.getYear() == null) {
             throw new PaintingException("Year is invalid");
         }
-        Painting painting = paintingMapper.mapPaintingDtoToPainting(paintingDto);
         paintingDao.updatePaintingInfo(painting);
     }
 
@@ -237,4 +236,12 @@ public class PaintingService {
         return paintings; 
         }
 
+    public Map<Integer, String> getPainterNames(List<Painting> paintings) {
+        Map<Integer, String> painterNames = new HashMap<>();
+        for (Painting painting : paintings) {
+            Painter painter = painterService.getByPaintingId(painting.getId());
+            painterNames.put(painting.getId(), painter.getFullName());
+        }
+        return painterNames;
+    }
 }

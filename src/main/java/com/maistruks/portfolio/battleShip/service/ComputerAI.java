@@ -1,13 +1,12 @@
-package com.maistruks.portfolio.service.battleShip;
+package com.maistruks.portfolio.battleShip.service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import com.maistruks.portfolio.model.battleShip.Field;
+import com.maistruks.portfolio.battleShip.model.Field;
 
 public class ComputerAI {
-
 
     private List<Field> enemyShots = new ArrayList<>();
     private Random random = new Random();

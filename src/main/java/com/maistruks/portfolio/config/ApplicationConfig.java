@@ -12,6 +12,11 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
+import com.maistruks.portfolio.battleShip.service.FieldChecker;
+import com.maistruks.portfolio.battleShip.service.GamaManager;
+import com.maistruks.portfolio.battleShip.service.ShipsGenerator;
+import com.maistruks.portfolio.battleShip.service.TableCreater;
+import com.maistruks.portfolio.battleShip.service.UserInputChecker;
 import com.maistruks.portfolio.controller.BattleshipController;
 import com.maistruks.portfolio.controller.CvController;
 import com.maistruks.portfolio.controller.MainController;
@@ -25,13 +30,8 @@ import com.maistruks.portfolio.gallery.dao.impl.rowMapper.PainterRowMapper;
 import com.maistruks.portfolio.gallery.dao.impl.rowMapper.PaintingRowMapper;
 import com.maistruks.portfolio.gallery.mapper.PainterMapper;
 import com.maistruks.portfolio.gallery.mapper.PaintingMapper;
-import com.maistruks.portfolio.service.battleShip.FieldChecker;
-import com.maistruks.portfolio.service.battleShip.GamaManager;
-import com.maistruks.portfolio.service.battleShip.ShipsGenerator;
-import com.maistruks.portfolio.service.battleShip.TableCreater;
-import com.maistruks.portfolio.service.battleShip.UserInputChecker;
-import com.maistruks.portfolio.service.gallery.PainterService;
-import com.maistruks.portfolio.service.gallery.PaintingService;
+import com.maistruks.portfolio.gallery.service.PainterService;
+import com.maistruks.portfolio.gallery.service.PaintingService;
 
 @Configuration
 @ComponentScan({ "com.maistruk.springapp.config" })

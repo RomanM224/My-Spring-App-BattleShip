@@ -14,15 +14,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.maistruks.portfolio.battleShip.model.Field;
+import com.maistruks.portfolio.battleShip.model.Fleet;
+import com.maistruks.portfolio.battleShip.service.ComputerAI;
+import com.maistruks.portfolio.battleShip.service.FieldChecker;
+import com.maistruks.portfolio.battleShip.service.GamaManager;
+import com.maistruks.portfolio.battleShip.service.ShipsGenerator;
+import com.maistruks.portfolio.battleShip.service.TableCreater;
+import com.maistruks.portfolio.battleShip.service.UserInputChecker;
 import com.maistruks.portfolio.exception.BattleShipException;
-import com.maistruks.portfolio.model.battleShip.Field;
-import com.maistruks.portfolio.model.battleShip.Fleet;
-import com.maistruks.portfolio.service.battleShip.ComputerAI;
-import com.maistruks.portfolio.service.battleShip.FieldChecker;
-import com.maistruks.portfolio.service.battleShip.GamaManager;
-import com.maistruks.portfolio.service.battleShip.ShipsGenerator;
-import com.maistruks.portfolio.service.battleShip.TableCreater;
-import com.maistruks.portfolio.service.battleShip.UserInputChecker;
 
 
 @Controller

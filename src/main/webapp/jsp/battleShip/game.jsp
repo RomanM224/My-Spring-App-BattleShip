@@ -1,13 +1,13 @@
-<%@page import="com.maistruks.portfolio.service.battleShip.TableCreater"%>
-<%@page import="com.maistruks.portfolio.service.battleShip.FieldChecker"%>
+<%@page import="com.maistruks.portfolio.battleShip.service.TableCreater"%>
+<%@page import="com.maistruks.portfolio.battleShip.service.FieldChecker"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <%@ page import="java.util.List"%>
 <%@ page import="java.util.ArrayList"%>
-<%@ page import="com.maistruks.portfolio.model.battleShip.Fleet"%>
-<%@ page import="com.maistruks.portfolio.model.battleShip.Field"%>
-<%@ page import="com.maistruks.portfolio.service.battleShip.ComputerAI"%>
+<%@ page import="com.maistruks.portfolio.battleShip.model.Fleet"%>
+<%@ page import="com.maistruks.portfolio.battleShip.model.Field"%>
+<%@ page import="com.maistruks.portfolio.battleShip.service.ComputerAI"%>
 <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>

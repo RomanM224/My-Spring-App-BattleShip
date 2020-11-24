@@ -1,4 +1,4 @@
-package com.maistruks.portfolio.model.gallery;
+package com.maistruks.portfolio.gallery.model;
 
 public enum Style {
 

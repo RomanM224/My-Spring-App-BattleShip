@@ -1,4 +1,4 @@
-package com.maistruks.portfolio.service.gallery;
+package com.maistruks.portfolio.gallery.service;
 
 import java.util.List;
 
@@ -9,9 +9,9 @@ import com.maistruks.portfolio.exception.PainterException;
 import com.maistruks.portfolio.exception.PaintingException;
 import com.maistruks.portfolio.gallery.dao.PainterDao;
 import com.maistruks.portfolio.gallery.mapper.PainterMapper;
-import com.maistruks.portfolio.model.gallery.Painter;
-import com.maistruks.portfolio.model.gallery.Painting;
-import com.maistruks.portfolio.model.gallery.dto.PainterDto;
+import com.maistruks.portfolio.gallery.model.Painter;
+import com.maistruks.portfolio.gallery.model.Painting;
+import com.maistruks.portfolio.gallery.model.dto.PainterDto;
 
 @Service
 public class PainterService {
@@ -22,37 +22,33 @@ public class PainterService {
     @Autowired
     private PaintingService paintingService;
     
-    @Autowired
-    private PainterMapper painterMapper;
 
-    public void create(PainterDto painterDto) throws PainterException {
-        if (painterDto.getFirstName() == null || painterDto.getFirstName().isEmpty()) {
+    public void create(Painter painter) throws PainterException {
+        if (painter.getFirstName() == null || painter.getFirstName().isEmpty()) {
             throw new PainterException("First Name is invalid");
         }
-        if (painterDto.getLastName() == null || painterDto.getLastName().isEmpty()) {
+        if (painter.getLastName() == null || painter.getLastName().isEmpty()) {
             throw new PainterException("Last Name is invalid");
         }
-        if (painterDto.getPainterInfo() == null || painterDto.getPainterInfo().isEmpty()) {
+        if (painter.getInfo() == null || painter.getInfo().isEmpty()) {
             throw new PainterException("Info is invalid");
         }
-        Painter painter = painterMapper.mapPainterDtoToPainter(painterDto);
         painterDao.create(painter);
     }
 
-    public void update(PainterDto painterDto) throws PainterException {
-        if(painterDto.getId() == null) {
+    public void update(Painter painter) throws PainterException {
+        if(painter.getId() == null) {
             throw new PainterException("Painter not exist");
         }
-        if (painterDto.getFirstName() == null || painterDto.getFirstName().isEmpty()) {
+        if (painter.getFirstName() == null || painter.getFirstName().isEmpty()) {
             throw new PainterException("First Name is invalid");
         }
-        if (painterDto.getLastName() == null || painterDto.getLastName().isEmpty()) {
+        if (painter.getLastName() == null || painter.getLastName().isEmpty()) {
             throw new PainterException("Last Name is invalid");
         }
-        if (painterDto.getPainterInfo() == null || painterDto.getPainterInfo().isEmpty()) {
+        if (painter.getInfo() == null || painter.getInfo().isEmpty()) {
             throw new PainterException("Info is invalid");
         }
-        Painter painter = painterMapper.mapPainterDtoToPainter(painterDto);
         painterDao.update(painter);
     }
 

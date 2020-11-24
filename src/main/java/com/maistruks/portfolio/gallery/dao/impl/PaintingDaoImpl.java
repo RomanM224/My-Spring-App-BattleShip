@@ -11,9 +11,9 @@ import org.springframework.stereotype.Repository;
 
 import com.maistruks.portfolio.gallery.dao.PaintingDao;
 import com.maistruks.portfolio.gallery.dao.impl.rowMapper.PaintingRowMapper;
-import com.maistruks.portfolio.model.gallery.Painter;
-import com.maistruks.portfolio.model.gallery.Painting;
-import com.maistruks.portfolio.model.gallery.Style;
+import com.maistruks.portfolio.gallery.model.Painter;
+import com.maistruks.portfolio.gallery.model.Painting;
+import com.maistruks.portfolio.gallery.model.Style;
 
 @Repository
 public class PaintingDaoImpl implements PaintingDao {
@@ -31,11 +31,11 @@ public class PaintingDaoImpl implements PaintingDao {
     private static final String DELETE_PAINTING_RELATED_TO_PAINTER = "DELETE FROM painters_paintings WHERE painting_id = ?";
     private static final String DELETE_PAINTING = "DELETE FROM paintings WHERE id = ?";
     private static final String GET_ROWS_AMOUNT = "SELECT COUNT(*) FROM paintings";
-    private static final String GET_PAINTINGS_IN_RANGE = "SELECT * FROM paintings OFFSET ? LIMIT ?";
-    private static final String GET_SORTED_BY_NAME_ASC = "SELECT * FROM paintings ORDER BY name OFFSET ? LIMIT ?";
-    private static final String GET_SORTED_BY_NAME_DESC = "SELECT * FROM paintings ORDER BY name DESC OFFSET ? LIMIT ?";
-    private static final String GET_SORTED_BY_YEAR_ASC = "SELECT * FROM paintings ORDER BY year OFFSET ? LIMIT ?";
-    private static final String GET_SORTED_BY_YEAR_DESC = "SELECT * FROM paintings ORDER BY year DESC OFFSET ? LIMIT ?";
+    private static final String GET_PAINTINGS_IN_RANGE = "SELECT * FROM paintings LIMIT ? OFFSET ?";
+    private static final String GET_SORTED_BY_NAME_ASC = "SELECT * FROM paintings ORDER BY name LIMIT ? OFFSET ?";
+    private static final String GET_SORTED_BY_NAME_DESC = "SELECT * FROM paintings ORDER BY name DESC LIMIT ? OFFSET ?";
+    private static final String GET_SORTED_BY_YEAR_ASC = "SELECT * FROM paintings ORDER BY year LIMIT ? OFFSET ?";
+    private static final String GET_SORTED_BY_YEAR_DESC = "SELECT * FROM paintings ORDER BY year DESC LIMIT ? OFFSET ?";
 
 
 
@@ -110,30 +110,27 @@ public class PaintingDaoImpl implements PaintingDao {
 
     @Override
     public List<Painting> getPaintingsInRange(Integer offset, Integer limit) {
-        return jdbcTemplate.query(GET_PAINTINGS_IN_RANGE, paintingRowMapper, offset, limit);
+        return jdbcTemplate.query(GET_PAINTINGS_IN_RANGE, paintingRowMapper, limit, offset);
     }
 
     @Override
     public List<Painting> getSortedByNameAsc(Integer offset, Integer limit) {
-        return jdbcTemplate.query(GET_SORTED_BY_NAME_ASC, paintingRowMapper, offset, limit);
+        return jdbcTemplate.query(GET_SORTED_BY_NAME_ASC, paintingRowMapper, limit, offset);
     }
 
     @Override
     public List<Painting> getSortedByNameDesc(Integer offset, Integer limit) {
-        return jdbcTemplate.query(GET_SORTED_BY_NAME_DESC, paintingRowMapper, offset, limit);
+        return jdbcTemplate.query(GET_SORTED_BY_NAME_DESC, paintingRowMapper, limit, offset);
     }
 
     @Override
     public List<Painting> getSortedByYearAsc(Integer offset, Integer limit) {
-        return jdbcTemplate.query(GET_SORTED_BY_YEAR_ASC, paintingRowMapper, offset, limit);
+        return jdbcTemplate.query(GET_SORTED_BY_YEAR_ASC, paintingRowMapper, limit, offset);
     }
 
     @Override
     public List<Painting> getSortedByYearDesc(Integer offset, Integer limit) {
-        return jdbcTemplate.query(GET_SORTED_BY_YEAR_DESC, paintingRowMapper, offset, limit);
+        return jdbcTemplate.query(GET_SORTED_BY_YEAR_DESC, paintingRowMapper, limit, offset);
     }
-
-    
-    
 
 }

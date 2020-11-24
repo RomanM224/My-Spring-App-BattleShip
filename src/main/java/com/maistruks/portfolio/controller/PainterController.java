@@ -9,13 +9,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.maistruks.portfolio.exception.PainterException;
 import com.maistruks.portfolio.exception.PaintingException;
-import com.maistruks.portfolio.model.gallery.Painter;
-import com.maistruks.portfolio.model.gallery.dto.PainterDto;
-import com.maistruks.portfolio.service.gallery.PainterService;
+import com.maistruks.portfolio.gallery.mapper.PainterMapper;
+import com.maistruks.portfolio.gallery.model.Painter;
+import com.maistruks.portfolio.gallery.model.dto.PainterDto;
+import com.maistruks.portfolio.gallery.service.PainterService;
 
 @Controller
 @RequestMapping("/painter")
@@ -23,16 +25,20 @@ public class PainterController {
 
     @Autowired
     private PainterService painterService;
+    
+    @Autowired
+    private PainterMapper painterMapper;
 
     @GetMapping("/create")
     public ModelAndView create() {
         return new ModelAndView("galery/painter/create");
     }
-
+    
     @PostMapping("/create")
     public ModelAndView create(@ModelAttribute PainterDto painterDto) {
         try {
-            painterService.create(painterDto);
+            Painter painter = painterMapper.mapPainterDtoToPainter(painterDto);
+            painterService.create(painter);
             ModelAndView modelAndView = new ModelAndView("galery/info");
             return modelAndView.addObject("info", "Painter created");
         } catch (PainterException e) {
@@ -52,9 +58,10 @@ public class PainterController {
     @PostMapping("/update")
     public ModelAndView update(@ModelAttribute PainterDto painterDto) {
         try {
-            painterService.update(painterDto);
+            Painter painter = painterMapper.mapPainterDtoToPainter(painterDto);
+            painterService.update(painter);
             ModelAndView modelAndView = new ModelAndView("galery/info");
-            return modelAndView.addObject("info", "Painter created");
+            return modelAndView.addObject("info", "Painter Updated");
         } catch (PainterException e) {
             ModelAndView modelAndView = new ModelAndView("galery/painter/update");
             List<Painter> painters = painterService.getAll();

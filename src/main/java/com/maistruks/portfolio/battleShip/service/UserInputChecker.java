@@ -1,4 +1,4 @@
-package com.maistruks.portfolio.service.battleShip;
+package com.maistruks.portfolio.battleShip.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,10 +7,10 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.maistruks.portfolio.battleShip.model.Field;
+import com.maistruks.portfolio.battleShip.model.Fleet;
+import com.maistruks.portfolio.battleShip.model.Ship;
 import com.maistruks.portfolio.exception.BattleShipException;
-import com.maistruks.portfolio.model.battleShip.Field;
-import com.maistruks.portfolio.model.battleShip.Fleet;
-import com.maistruks.portfolio.model.battleShip.Ship;
 
 
 

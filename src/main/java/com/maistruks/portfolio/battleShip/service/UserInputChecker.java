@@ -12,8 +12,6 @@ import com.maistruks.portfolio.battleShip.model.Fleet;
 import com.maistruks.portfolio.battleShip.model.Ship;
 import com.maistruks.portfolio.exception.BattleShipException;
 
-
-
 @Service
 public class UserInputChecker {
     

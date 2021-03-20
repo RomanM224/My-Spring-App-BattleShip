@@ -9,7 +9,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta http-equiv="Content-Type" name="viewport" content="text/html; charset=ISO-8859-1 width=device-width, initial-scale=1">
     <title>Update Painting</title>
     
     <spring:url value="/resources/img/icon.png" var="icon" />
@@ -36,9 +36,9 @@
   %>
   	<jsp:include page="../../components/navigationBarGalery.jsp"></jsp:include>   
   	
-  	<div class="container m-2">
+  	<div class="container mt-2">
 		<form action="../painting/updatePaintingInfo" method="post">
-			<div class="form-group col-sm-8 row m-5">
+			<div class="form-group col-xl-6 col-lg-8 col-md-10 col-12 row mt-5">
 			<label for="painting" class="col-sm-4 col-form-label"><b>Select painting: </b></label> 
 			<div class="col-sm-8" >
 	 			<select class="form-control <%if(info != null && info.equals("Painting not exist")){out.print("is-invalid");} %>" id="painting" name="id">

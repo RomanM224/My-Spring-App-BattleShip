@@ -94,10 +94,7 @@ public class BattleshipController {
         Fleet myFleet = gameManager.generateFleet(myFields);
         session.setAttribute("enemyShots", enemyShots);
         session.setAttribute("myShipsFields", gameManager.generateFleet(myFields).getAllFields());
-        
         session.setAttribute("myFleet", myFleet);
-        
-        
         
         List<Field> myShots = new ArrayList<>();
         for (int i = 1; i <= 10; i++) {
@@ -163,7 +160,6 @@ public class BattleshipController {
             session.setAttribute("info", "You Lose!");
             return new ModelAndView("battleShip/finish");
         }
-
         return new ModelAndView("battleShip/game");
     }
 }

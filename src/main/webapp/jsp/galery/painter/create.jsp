@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta http-equiv="Content-Type" name="viewport" content="text/html; charset=ISO-8859-1 width=device-width, initial-scale=1">
     <title>Create Painter</title>
     
     <spring:url value="/resources/img/icon.png" var="icon" />
@@ -29,18 +29,18 @@
   %>
   	<jsp:include page="../../components/navigationBarGalery.jsp"></jsp:include>   
   	
-  	<div class="container m-5">
+  	<div class="container mt-5">
 		<form class="form-group" action="../painter/create" method="post">
 			<label for="firstName">Input Painter first name: </label> 
-			<input class="form-control col-4 <%if(info != null && info.equals("First Name is invalid")){out.print("is-invalid");} %>" id="firstName" type="text" name="firstName" />
+			<input class="form-control col-xl-4 col-lg-6 col-md-8 col-10 <%if(info != null && info.equals("First Name is invalid")){out.print("is-invalid");} %>" id="firstName" type="text" name="firstName" />
 			
 			<label for="lastName">Input Painter last name: </label> 
-			<input class="form-control col-4 <%if(info != null && info.equals("Last Name is invalid")){out.print("is-invalid");} %>" id="lastName" type="text" name="lastName" />
+			<input class="form-control col-xl-4 col-lg-6 col-md-8 col-10  <%if(info != null && info.equals("Last Name is invalid")){out.print("is-invalid");} %>" id="lastName" type="text" name="lastName" />
 			
 			<label for="exampleFormControlTextarea1">Painter Info</label>
-    		<textarea class="form-control col-4 <%if(info != null && info.equals("Info is invalid")){out.print("is-invalid");} %>" id="exampleFormControlTextarea1" name="painterInfo" rows="4"></textarea>
+    		<textarea class="form-control col-xl-4 col-lg-6 col-md-8 col-10  <%if(info != null && info.equals("Info is invalid")){out.print("is-invalid");} %>" id="exampleFormControlTextarea1" name="painterInfo" rows="4"></textarea>
 			
-			<input class="btn btn-primary mt-2" type="submit" value="Create" />
+			<input class="btn btn-primary mt-2" type="submit" value="Create Painter" />
 		</form>
 	<%
 	if(info != null){

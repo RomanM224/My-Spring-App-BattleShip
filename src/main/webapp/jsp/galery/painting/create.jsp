@@ -8,7 +8,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta http-equiv="Content-Type" name="viewport" content="text/html; charset=ISO-8859-1 width=device-width, initial-scale=1">
     <title>Create Painting</title>
     
     <spring:url value="/resources/img/icon.png" var="icon" />
@@ -35,9 +35,9 @@
   %>
   	<jsp:include page="../../components/navigationBarGalery.jsp"></jsp:include>   
   	
-  	<div class="container m-2">
+  	<div class="container mt-5 container_create_painter">
 		<form action="../painting/create" method="post" enctype="multipart/form-data">
-			<div class="form-group col-sm-8 row m-5">
+			<div class="form-group col-xl-8 col-lg-10 col-md-12 col-12 row">
 			
 			<label for="name" class="col-sm-4 col-form-label mt-3"><b>Input Painting name: </b></label> 
 			<div class="col-sm-8 mt-3">
@@ -71,7 +71,7 @@
 			<%} %>
 			</select> 
 			</div>
-			<input class="btn btn-primary mt-5 px-5 py-3" type="submit" value="Create Painter" />
+			<input class="btn btn-primary mt-5 px-5 py-3" type="submit" value="Create Painting" />
 			</div>
 		</form>
 	<%

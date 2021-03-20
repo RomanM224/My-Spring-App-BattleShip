@@ -4,7 +4,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Gallery</title>
     
 	<spring:url value="/resources/css/stylesGeneral.css" var="stylesGeneral" />
@@ -21,12 +20,11 @@
   <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light navBar">
-	
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav ml-5">
+    <ul class="navbar-nav">
     <li class="nav-item">
     	<spring:url value="/" var="homeUrl" htmlEscape="true"/>
         <a class="nav-link" href="${homeUrl}">Home</a>

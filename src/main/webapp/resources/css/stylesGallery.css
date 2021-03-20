@@ -11,7 +11,7 @@
 }
 
 .bg-image-galery{
-	background-color: #686868;
+	background-color: #babdb6;
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-attachment: fixed;	
@@ -19,6 +19,13 @@
 
 .card{
 	box-shadow: 5px 5px 15px #3c3c3c;
+}
+
+@media(min-width:800px){
+   .painting{
+     width:200px;
+   }	
+
 }
 
 .card-bg-color{
@@ -31,5 +38,6 @@ div.myCard {
 
 .pageNavBtn{
 	height:40px;
-	width: 80px;
+	width: 100px;
+	margin-top:10px;
 }

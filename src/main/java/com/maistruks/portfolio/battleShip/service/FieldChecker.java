@@ -14,13 +14,13 @@ public class FieldChecker {
         boolean matchesWithFields = matchesWithMyFields(fieldName, enemyShots);
         boolean matchesWithMyShips = matchesWithMyShips(fieldName, myShipsFields);
         if(matchesWithMyShips && matchesWithFields) {
-            return new String[]{"blueMark", "checked", "redMark"};
+            return new String[]{"label_square_my", "checked", "blue_red_square_my"};
         } else if(matchesWithMyShips ) {
-            return new String[]{"blueMark", "checked", "oragneMark"};
+            return new String[]{"label_square_my", "checked", "blue_orange_square_my"};
         } else if(matchesWithFields) {
-            return new String[]{"blueMark", "checked", "greyMark"};
+            return new String[]{"label_square_my", "checked", "blue_grey_square_my"};
         }else {
-            return new String[]{"blueMark", "", "greyMark"};
+            return new String[]{"label_square_my", "", "blue_grey_square_my"};
         }
     }
     
@@ -49,11 +49,11 @@ public class FieldChecker {
         boolean matchesWithEnemyFields = matchesWithEnemyFields(fieldName, myShots);
         boolean matchesWithEnemyShips = matchesWithEnemyShips(fieldName, enemyShipsFields);
         if(matchesWithEnemyShips && matchesWithEnemyFields) {
-            return new String[]{"blueMark", "checked", "redMark", "unclicable"};
+            return new String[]{"label_square_enemy", "checked", "blue_red_square_enemy", "unclicable"};
         } else if(matchesWithEnemyFields) {
-            return new String[]{"blueMark", "checked", "greyMark", "unclicable"};
+            return new String[]{"label_square_enemy", "checked", "blue_grey_square_enemy", "unclicable"};
         }else {
-            return new String[]{"blueMark", "", "greyMark", "product-list"};
+            return new String[]{"label_square_enemy", "", "blue_grey_square_enemy", "product-list"};
         }
     }
     
@@ -83,11 +83,11 @@ public class FieldChecker {
         boolean matchesWithEnemyFields = matchesWithEnemyFields(fieldName, myShots);
         boolean matchesWithEnemyShips = matchesWithEnemyShips(fieldName, enemyShipsFields);
         if(matchesWithEnemyShips) {
-            return new String[]{"blueMark", "checked", "redMark"};
+            return new String[]{"label_square_enemy", "checked", "blue_red_square_enemy"};
         } else if(matchesWithEnemyFields) {
-            return new String[]{"blueMark", "checked", "greyMark"};
+            return new String[]{"label_square_enemy", "checked", "blue_grey_square_enemy"};
         }else {
-            return new String[]{"blueMark", "", "greyMark"};
+            return new String[]{"label_square_enemy", "", "blue_grey_square_enemy"};
         }
     }
 

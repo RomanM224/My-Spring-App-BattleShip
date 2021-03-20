@@ -1,119 +1,501 @@
-@charset "ISO-8859-1";
-
-.tbl {
-	font-size: 25px;
-	border: 5px outset;
-	padding: 10px;
-}
-
-.blueMark {
-	display: block;
-	position: relative;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	cursor: pointer;
+.table_data_start {
+	height: 50px;
+	width: 50px;
 	font-size: 20px;
+	margin: auto;
+ padding:auto;
+}
+.startBtn{
+	 margin-top: 100px;
+ margin-left: 0px;
+ height: 80px;
+ width: 170px;
+}
+.shotBtn {
+	margin-top: 100px;
+	margin-left: 0px;
+	height: 80px;
+	width: 170px;
 }
 
 input[type=checkbox] {
 	visibility: hidden;
 }
 
-.greyMark {
+.label_square_start {
+	display: block;
+	position: relative;
+	cursor: pointer;
+	margin: auto;
+	padding:auto;
+	
+}
+
+.blue_orange_square_start {
 	position: absolute;
 	top: 0;
 	left: 0;
-	height: 30px;
-	width: 30px;
+	height: 40px;
+	width: 40px;
 	background-color: #3983fa;
 }
 
-.greyMark:after {
+.blue_orange_square_start::after {
 	content: "";
 	position: absolute;
 	display: none;
-}
-
-.blueMark input:checked ~ .greyMark:after {
-	display: block;
-}
-
-.blueMark .greyMark:after {
-	position: absolute;
 	top: 0;
 	left: 0;
-	height: 30px;
-	width: 30px;
-	background-color: #6b645b;
-}
-
-.redMark {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 30px;
-	width: 30px;
-	background-color: #3983fa;
-}
-
-.redMark:after {
-	content: "";
-	position: absolute;
-	display: none;
-}
-
-.blueMark input:checked ~ .redMark:after {
-	display: block;
-}
-
-.blueMark .redMark:after {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 30px;
-	width: 30px;
-	background-color: red;
-}
-
-
-.oragneMark {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 30px;
-	width: 30px;
-	background-color: #3983fa;
-}
-
-.oragneMark:after {
-	content: "";
-	position: absolute;
-	display: none;
-}
-
-.blueMark input:checked ~ .oragneMark:after {
-	display: block;
-}
-
-.blueMark .oragneMark:after {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 30px;
-	width: 30px;
+	height: 40px;
+	width: 40px;
 	background-color: #e88e17;
 }
 
-td{
-	height: 35px;
-	width: 35px;
+input:checked ~ .blue_orange_square_start:after {
+	display: block;
 }
 
-.shotBtn{
-	margin-top:100px;
-	margin-left:0px;
-	height: 80px;
+.table_data_my {
+	height: 50px;
+	width: 50px;
+	font-size: 20px;
+	margin: auto;
+ padding:auto;
+}
+
+.table_data_enemy {
+	height: 50px;
+	width: 50px;
+	font-size: 20px;
+	margin: auto;
+ padding:auto;
+}
+
+.label_square_my {
+	display: block;
+	position: relative;
+	cursor: pointer;
+	margin: auto;
+ padding:auto;
+}
+
+.blue_orange_square_my {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 40px;
+	width: 40px;
+	background-color: #3983fa; /* blue */
+}
+
+.blue_orange_square_my::after {
+	content: "";
+	position: absolute;
+	display: none;
+	top: 0;
+	left: 0;
+	height: 40px;
+	width: 40px;
+	background-color: #e88e17;
+}
+
+input:checked ~ .blue_orange_square_my:after {
+	display: block;
+}
+
+.blue_red_square_my {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 40px;
+	width: 40px;
+	background-color: #3983fa; /* blue */
+}
+
+.blue_red_square_my::after {
+	content: "";
+	position: absolute;
+	display: none;
+	top: 0;
+	left: 0;
+	height: 40px;
+	width: 40px;
+	background-color: red;
+}
+
+input:checked ~ .blue_red_square_my:after {
+	display: block;
+}
+
+.blue_grey_square_my {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 40px;
+	width: 40px;
+	background-color: #3983fa; /* blue */
+}
+
+.blue_grey_square_my::after {
+	content: "";
+	position: absolute;
+	display: none;
+	top: 0;
+	left: 0;
+	height: 40px;
+	width: 40px;
+	background-color: #6b645b;
+}
+
+input:checked ~ .blue_grey_square_my:after {
+	display: block;
+}
+
+.label_square_enemy {
+	display: block;
+	position: relative;
+	cursor: pointer;
+	margin: auto;
+ padding:auto;
+}
+
+.blue_red_square_enemy {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 40px;
+	width: 40px;
+	background-color: #3983fa; /* blue */
+}
+
+.blue_red_square_enemy::after {
+	content: "";
+	position: absolute;
+	display: none;
+	top: 0;
+	left: 0;
+	height: 40px;
+	width: 40px;
+	background-color: red;
+}
+
+input:checked ~ .blue_red_square_enemy:after {
+	display: block;
+}
+
+.blue_grey_square_enemy {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 40px;
+	width: 40px;
+	background-color: #3983fa; /* blue */
+}
+
+.blue_grey_square_enemy::after {
+	content: "";
+	position: absolute;
+	display: none;
+	top: 0;
+	left: 0;
+	height: 40px;
+	width: 40px;
+	background-color: #6b645b;
+}
+
+input:checked ~ .blue_grey_square_enemy:after {
+	display: block;
+}
+
+.grey_square {
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: #6b645b;
+}
+
+.blue_square {
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: #3983fa;
+}
+
+.red_square {
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: red;
+}
+
+.orange_square {
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: #e88e17;
+}
+
+.how_play_btn {
+	display: none;
+	margin-top: 10px;
+	height: 50px;
 	width: 170px;
+	border-radius: 5px;
+	background: #fcaf3e;
 }
 
+.close_btn {
+	display: block;
+	margin-top: 10px;
+	height: 50px;
+	width: 180px;
+	border-radius: 5px;
+	background: #ef2929;
+}
 
+.tutorial_image {
+	width: 500px;
+}
+
+.tutorial_image_block_off {
+	display: none;
+}
+.my_ships_block_mobile{
+	display:none;
+}
+.infoBtn{
+	display:none;
+}
+.ships_result_down_off{
+	display:none;
+}
+@media ( min-width :600px) and (max-width:1500px) {
+	.tutorial_image{
+  width: 400px;	
+	}
+	.table_data_start {
+		height: 35px;
+		width: 35px;
+	}
+	.blue_orange_square_start {
+		height: 30px;
+		width: 30px;
+	}
+	.blue_orange_square_start::after {
+		height: 30px;
+		width: 30px;
+	}
+	.table_data_my {
+		height: 35px;
+		width: 35px;
+	}
+	.table_data_enemy {
+		height: 35px;
+		width: 35px;
+	}
+	.blue_orange_square_my {
+		height: 30px;
+		width: 30px;
+	}
+	.blue_orange_square_my::after {
+		height: 30px;
+		width: 30px;
+	}
+	.blue_red_square_my {
+		height: 30px;
+		width: 30px;
+	}
+	.blue_red_square_my::after {
+		height: 30px;
+		width: 30px;
+	}
+	.blue_grey_square_my {
+		height: 30px;
+		width: 30px;
+	}
+	.blue_grey_square_my::after {
+		height: 30px;
+		width: 30px;
+	}
+	.blue_red_square_enemy {
+		height: 30px;
+		width: 30px;
+	}
+	.blue_red_square_enemy::after {
+		height: 30px;
+		width: 30px;
+	}
+	.blue_grey_square_enemy {
+		height: 30px;
+		width: 30px;
+	}
+	.blue_grey_square_enemy::after {
+		height: 30px;
+		width: 30px;
+	}
+	.grey_square {
+		height: 30px;
+		width: 30px;
+	}
+	.blue_square {
+		height: 30px;
+		width: 30px;
+	}
+	.red_square {
+		height: 30px;
+		width: 30px;
+	}
+	.orange_square {
+		height: 30px;
+		width: 30px;
+	}
+}
+
+@media ( min-width : 300px) and (max-width: 600px) {
+ .my_ships_block{
+  display:none;
+ }
+	.my_ships_block_mobile{
+  display:block;
+}
+	.how_play_btn {
+		display: block;
+	}
+	.table_data_start {
+		height: 30px;
+		width: 30px;
+		border: 0px solid;
+		font-size:10px;
+	}
+	.blue_orange_square_start {
+		height: 20px;
+		width: 20px;
+	}
+	.blue_orange_square_start::after {
+		height: 20px;
+		width: 20px;
+	}
+	.shotBtn {
+		margin-top: 10px;
+		width: 110px;
+	}
+	.startBtn{
+	 margin-top: 10px;
+	}
+	.tutorial_image_block_off {
+		padding: 20px;
+		background: white;
+		display: block;
+		position: absolute;
+		transform: translate(0, -260%);
+		transition: transform .5s;
+	}
+	.tutorial_image_off {
+		width: 400px;
+	}
+	.tutorial_image_block_on {
+		padding: 20px;
+		background: white;
+		position: absolute;
+		transform: translate(0, -100%);
+		transition: transform .5s;
+		box-shadow: 3px 3px 3px 3px #afafaf;
+	}
+	.tutorial_image_block {
+		display: none;
+	}
+	.ships_result_top{
+	 display:none;
+	}
+	
+	.table_data_my {
+  height: 15px;
+  width: 15px;
+  border: 0px solid;
+  font-size:10px;
+ }
+ .table_data_enemy {
+  height: 30px;
+  width: 30px;
+  border: 0px solid;
+  font-size:10px;
+ }
+ .blue_orange_square_my {
+  height: 10px;
+  width: 10px;
+ }
+ .blue_orange_square_my::after {
+  height: 10px;
+  width: 10px;
+ }
+ .blue_red_square_my {
+  height: 10px;
+  width: 10px;
+ }
+ .blue_red_square_my::after {
+  height: 10px;
+  width: 10px;
+ }
+ .blue_grey_square_my {
+  height: 10px;
+  width: 10px;
+ }
+ .blue_grey_square_my::after {
+  height: 10px;
+  width: 10px;
+ }
+ .blue_red_square_enemy {
+  height: 20px;
+  width: 20px;
+ }
+ .blue_red_square_enemy::after {
+  height: 20px;
+  width: 20px;
+ }
+ .blue_grey_square_enemy {
+  height: 20px;
+  width: 20px;
+ }
+ .blue_grey_square_enemy::after {
+  height: 20px;
+  width: 20px;
+ }
+ .infoBtn{
+  margin-top: 10px;
+  display: block;
+  height: 50px;
+  width: 110px;
+  background:red;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor:pointer;
+ }
+ .infoBtn:hover{
+  margin-top: 10px;
+  display: block;
+  height: 50px;
+  width: 110px;
+  background:#cc0000;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor:pointer;
+ }
+ .ships_result_down_off{
+  display:block;
+  background: white;
+  padding:5px;
+  position:absalute;
+  transform: translate(0, -250%);
+  transition: transform .5s;
+ }
+  .ships_result_down_on{
+  display:block;
+  background: white;
+  padding:20px;
+  position:absalute;
+  transform: translate(0, -100%);
+  transition: transform .5s;
+ }
+}

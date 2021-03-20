@@ -8,7 +8,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta http-equiv="Content-Type" name="viewport" content="text/html; charset=ISO-8859-1 width=device-width, initial-scale=1">
     <title>Show By Painting</title>
     
     <spring:url value="/resources/img/icon.png" var="icon" />
@@ -37,7 +37,7 @@
   	<div class="container m-2">
 		<form  action="../painting/showPainting" method="post">
 		
-			<div class="form-group col-sm-5 row m-5">
+			<div class="form-group col-xl-6 col-lg-8 col-md-10 col-10 row m-5">
 				<label for="painting" class="col-sm-4 col-form-label mt-3">Select Painting: </label>
 				<div class="col-sm-8 mt-3" >
 				<select class="form-control <%if(info != null && info.equals("Painting not exist")){out.print("is-invalid");} %>" id="painting" name="paintingName">

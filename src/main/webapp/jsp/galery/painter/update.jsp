@@ -6,7 +6,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <meta http-equiv="Content-Type" name="viewport" content="text/html; charset=ISO-8859-1 width=device-width, initial-scale=1">
     <title>Update Painter</title>
     
     <spring:url value="/resources/img/icon.png" var="icon" />
@@ -31,23 +31,23 @@
   String info = (String) request.getAttribute("info");
   %>
   	<jsp:include page="../../components/navigationBarGalery.jsp"></jsp:include>   
-	<div class="container m-5">
+	<div class="container mt-5">
 		<form class="form-group" action="../painter/update" method="post">
-			<select class="form-control col-3  <%if(info != null && info.equals("Painter not exist")){out.print("is-invalid");} %>" name="id">
+			<select class="form-control col-xl-4 col-lg-6 col-md-8 col-10 <%if(info != null && info.equals("Painter not exist")){out.print("is-invalid");} %>" name="id">
 			<%for(Painter painter : painters) { %>
 				<option value=<%out.print("\"" + painter.getId() + "\""); %>><%out.print(painter.getFullName()); %></option>
 			<%} %>
 			</select> 
 			<label for="id">Input painter first name: </label> 
-			<input class="form-control col-3  <%if(info != null && info.equals("First Name is invalid")){out.print("is-invalid");} %>" id="firstName" type="text" name="firstName" />
+			<input class="form-control col-xl-4 col-lg-6 col-md-8 col-10 <%if(info != null && info.equals("First Name is invalid")){out.print("is-invalid");} %>" id="firstName" type="text" name="firstName" />
 			
 			<label for="lastName">Input painter last name: </label> 
-			<input class="form-control col-3 <%if(info != null && info.equals("Last Name is invalid")){out.print("is-invalid");} %>" id="lastName" type="text" name="lastName" />
+			<input class="form-control col-xl-4 col-lg-6 col-md-8 col-10 <%if(info != null && info.equals("Last Name is invalid")){out.print("is-invalid");} %>" id="lastName" type="text" name="lastName" />
 			
 			<label for="exampleFormControlTextarea1">Painter Info</label>
-    		<textarea class="form-control col-4 <%if(info != null && info.equals("Info is invalid")){out.print("is-invalid");} %>" id="exampleFormControlTextarea1" name="painterInfo" rows="4"></textarea>
+    		<textarea class="form-control col-xl-4 col-lg-6 col-md-8 col-10 <%if(info != null && info.equals("Info is invalid")){out.print("is-invalid");} %>" id="exampleFormControlTextarea1" name="painterInfo" rows="4"></textarea>
 			
-			<input class="btn btn-primary mt-2" type="submit" value="Update" />
+			<input class="btn btn-primary mt-2" type="submit" value="Update Painter" />
 		</form>
 	<%
 	if(info != null){

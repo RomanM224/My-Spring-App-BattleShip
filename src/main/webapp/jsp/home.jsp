@@ -30,12 +30,14 @@
                 <div>
                     Det er min
                     <b>portfolio</b>
-                    applikasjon. Jeg har skrevet denne applikasjon for å vise hvordan jeg kan kode.<br> <br>
-                    Jeg har skrevet 2 små applikasjoner, spill
+                    applikasjon. Jeg har skrevet denne applikasjon for å vise hvordan jeg kan kode. Jeg har tilpasset
+                    denne applikasjonen for både stasjonær PC og mobiltelefoner.<br> <br> Jeg har skrevet 2
+                    små applikasjoner, spill
                     <b>"Battleship"</b>
                     og
-                    <b>"Gallery"</b>
-                    .<br> <br> I denne applikasjon brukte jeg disse teknologiene:
+                    <b>"Gallery" </b>
+                    . I "Gallery" applikasjonen kan du lagre kunstner og malerier i database og deretter vise og sortere
+                    denne informasjonen.<br> <br> I denne applikasjon brukte jeg disse teknologiene:
                     <b>Java, Spring, Spring Mvc, Spring JdbcTemplate, SQL, PostgreSQL, Bootstrap 5, Jsp, Html, CSS,
                         JUnit, Mockito.</b>
                     <br> <br> Jeg deployet denne applikasjon på
@@ -127,8 +129,97 @@
         </div>
     </div>
 
+    <div class="container mt-5">
+        <h3 class="col-6 title_example_top_slider">Applikasjonseksempler</h3>
+    </div>
 
-    <div class="container">
+    <div class="slider">
+        <div class="prev_block" onclick="prevSlide()">
+            <spring:url value="/resources/img/prev.png" var="prev" />
+            <div class="prev_button" style="background: url('${prev}');"></div>
+        </div>
+
+        <div class="slides_block">
+            <div class="slides" id="slides">
+                <div class="slide">
+                    <div class="title_example_slider">
+                        <p>
+                            <b>Begynne å spille battleship (skrivebordsversjon / mobilversjon)</b>
+                        </p>
+                    </div>
+                    <div class="images">
+                        <spring:url value="/resources/img/new_game_desktop.png" var="new_game_desktop" />
+                        <img src="${new_game_desktop}" class="picture_desktop">
+
+                        <spring:url value="/resources/img/new_game_mobile.jpg" var="new_game_mobile" />
+                        <img src="${new_game_mobile}" class="picture_mobile">
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="title_example_slider">
+                        <p>
+                            <b>Spill battleship (skrivebordsversjon / mobilversjon)</b>
+                        </p>
+                    </div>
+                    <div class="images">
+                        <spring:url value="/resources/img/game_desktop.png" var="game_desktop" />
+                        <img src="${game_desktop}" class="picture_desktop">
+                        <spring:url value="/resources/img/game_mobile.jpg" var="game_mobile" />
+                        <img src="${game_mobile}" class="picture_mobile">
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="title_example_slider">
+                        <p>
+                            <b>Vise alle malerier (skrivebordsversjon / mobilversjon)</b>
+                        </p>
+                    </div>
+                    <div class="images">
+                        <spring:url value="/resources/img/show_all_desktop.png" var="show_all_desktop" />
+                        <img src="${show_all_desktop}" class="picture_desktop">
+                        <spring:url value="/resources/img/show_all_mobile.jpg" var="show_all_mobile" />
+                        <img src="${show_all_mobile}" class="picture_mobile">
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="title_example_slider">
+                        <p>
+                            <b>Lage ny maleri (skrivebordsversjon / mobilversjon)</b>
+                        </p>
+                    </div>
+                    <div class="images">
+                        <spring:url value="/resources/img/create_painting_desktop.png" var="create_painting_desktop" />
+                        <img src="${create_painting_desktop}" class="picture_desktop">
+                        <spring:url value="/resources/img/create_painting_mobile.jpg" var="create_painting_mobile" />
+                        <img src="${create_painting_mobile}" class="picture_mobile">
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="title_example_slider">
+                        <p>
+                            <b>Lage ny kunstner (skrivebordsversjon /mobilversjon)</b>
+                        </p>
+                    </div>
+                    <div class="images">
+                        <spring:url value="/resources/img/create_painter_desktop.png" var="create_painter_desktop" />
+                        <img src="${create_painter_desktop}" class="picture_desktop">
+                        <spring:url value="/resources/img/create_painter_mobile.jpg" var="create_painter_mobile" />
+                        <img src="${create_painter_mobile}" class="picture_mobile">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="next_block" onclick="nextSlide()">
+            <div class="next_block2">
+                <spring:url value="/resources/img/next.png" var="next" />
+                <div class="next_button" style="background: url('${next}');"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container app_examples_mobile">
         <div class="row mt-5">
             <h3 class="title_example_top">Applikasjonseksempler</h3>
         </div>
@@ -138,12 +229,12 @@
         </div>
         <div class="row justify-content-between">
             <div class="col-xl-8 mt-3">
-                <spring:url value="/resources/img/new_game_desktop.png" var="create_painter_desktop" />
-                <img alt="" src="${create_painter_desktop}" class="desktop_pic">
+                <spring:url value="/resources/img/new_game_desktop.png" var="new_game_desktop" />
+                <img alt="" src="${new_game_desktop}" class="desktop_pic">
             </div>
             <div class="col-xl-3 mt-3">
-                <spring:url value="/resources/img/new_game_mobile.jpg" var="create_painter_mobile" />
-                <img alt="" src="${create_painter_mobile}" class="mobile_pic">
+                <spring:url value="/resources/img/new_game_mobile.jpg" var="new_game_mobile" />
+                <img alt="" src="${new_game_mobile}" class="mobile_pic">
             </div>
         </div>
         <div class="row">
@@ -152,26 +243,26 @@
         </div>
         <div class="row justify-content-between">
             <div class="col-xl-8 mt-3">
-                <spring:url value="/resources/img/game_desktop.png" var="create_painter_desktop" />
-                <img alt="" src="${create_painter_desktop}" class="desktop_pic">
+                <spring:url value="/resources/img/game_desktop.png" var="game_desktop" />
+                <img alt="" src="${game_desktop}" class="desktop_pic">
             </div>
             <div class="col-xl-3 mt-3">
-                <spring:url value="/resources/img/game_mobile.jpg" var="create_painter_mobile" />
-                <img alt="" src="${create_painter_mobile}" class="mobile_pic">
+                <spring:url value="/resources/img/game_mobile.jpg" var="game_mobile" />
+                <img alt="" src="${game_mobile}" class="mobile_pic">
             </div>
         </div>
         <div class="row">
-            <p class="col-lg-8 col-md-10 col-sm-11 col-11 title_example mt-5">Vise alle maleri (skrivebordsversjon /
-                mobilversjon)</p>
+            <p class="col-lg-8 col-md-10 col-sm-11 col-11 title_example mt-5">Vise alle malerier (skrivebordsversjon
+                / mobilversjon)</p>
         </div>
         <div class="row justify-content-between">
             <div class="col-xl-8 mt-3">
-                <spring:url value="/resources/img/show_all_desktop.png" var="create_painter_desktop" />
-                <img alt="" src="${create_painter_desktop}" class="desktop_pic">
+                <spring:url value="/resources/img/show_all_desktop.png" var="show_all_desktop" />
+                <img alt="" src="${show_all_desktop}" class="desktop_pic">
             </div>
             <div class="col-xl-3 mt-3">
-                <spring:url value="/resources/img/show_all_mobile.jpg" var="create_painter_mobile" />
-                <img alt="" src="${create_painter_mobile}" class="mobile_pic">
+                <spring:url value="/resources/img/show_all_mobile.jpg" var="show_all_mobile" />
+                <img alt="" src="${show_all_mobile}" class="mobile_pic">
             </div>
         </div>
         <div class="row">
@@ -194,24 +285,57 @@
         </div>
         <div class="row justify-content-between mb-5">
             <div class="col-xl-8 mt-3">
-                <spring:url value="/resources/img/create_painting_desktop.png" var="create_painter_desktop" />
-                <img alt="" src="${create_painter_desktop}" class="desktop_pic">
+                <spring:url value="/resources/img/create_painting_desktop.png" var="create_painting_desktop" />
+                <img alt="" src="${create_painting_desktop}" class="desktop_pic">
             </div>
             <div class="col-xl-3 mt-3">
-                <spring:url value="/resources/img/create_painting_mobile.jpg" var="create_painter_mobile" />
-                <img alt="" src="${create_painter_mobile}" class="mobile_pic">
+                <spring:url value="/resources/img/create_painting_mobile.jpg" var="create_painting_mobile" />
+                <img alt="" src="${create_painting_mobile}" class="mobile_pic">
             </div>
         </div>
-
-
-
-
-
-
-
-
     </div>
 
+    <script>
+					function nextSlide() {
+						var slides = document.getElementById("slides");
+						var slides_width = slides.offsetWidth;
+						var marginLeft = window.getComputedStyle(slides).marginLeft;
+						var marginLength = marginLeft.length;
+						if (marginLeft.substring(0, marginLength - 2) == 0) {
+							slides.style.marginLeft = "-" + slides_width + "px";
+						} else {
+							var marginLeftNum = marginLeft.substring(0,
+									marginLength - 2);
+							var marginLeftNum = marginLeftNum - slides_width;
+							if (marginLeftNum <= (-4.5 * slides_width)) {
+								slides.style.marginLeft = 0 + "px";
+							} else {
+								slides.style.marginLeft = marginLeftNum + "px";
+							}
+						}
+					}
+
+					function prevSlide() {
+						var slides = document.getElementById("slides");
+						var slides_width = slides.offsetWidth;
+						var marginLeft = window.getComputedStyle(slides).marginLeft;
+						var marginLength = marginLeft.length;
+						if (marginLeft.substring(0, marginLength - 2) == 0) {
+							slides.style.marginLeft = "-" + slides_width + "px";
+						} else {
+							var marginLeftNum = marginLeft.substring(0,
+									marginLength - 2);
+							var marginLeftNum = parseInt(marginLeftNum)
+									+ slides_width;
+							console.log(marginLeftNum);
+							if (marginLeftNum >= 0) {
+								slides.style.marginLeft = 0 + "px";
+							} else {
+								slides.style.marginLeft = marginLeftNum + "px";
+							}
+						}
+					}
+				</script>
 
 </body>
 </html>
